@@ -1,0 +1,231 @@
+*{
+
+    margin: 0;
+    padding: 0;
+}
+.logo{
+
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.logo img{
+    width: 45px;
+    height: 45px;
+    border: 3px solid white;
+    border-radius: 500px;
+
+
+}
+
+
+.navbar{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+
+}
+
+.nav-list{
+    width: 50%;
+    height: 120%;
+    margin: 0;
+    text-align: left;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* background-color: black; */
+
+
+}
+
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px;
+
+
+}
+
+
+.nav-list li a{
+
+    text-decoration: none;
+    color: white;
+
+
+}
+.nav-list li a:hover{
+
+    text-decoration: none;
+    color: red;
+
+
+
+
+}
+
+.rightNav{
+
+
+    width: 60%;
+    text-align: right;
+    height: 90%;
+    padding:  23px;
+    /* background-color: blue; */
+}
+
+#search{
+
+
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid white;
+    border-radius: 9px;
+}
+
+.background{
+    background:rgba(0, 0,0, 0.7) url('../img/people-festival.jpg');
+    background-size: cover;
+    /* width: 50px; */
+    background-blend-mode: darken;
+    height: 50px;
+}
+
+.firstSection{
+
+    height : 100vh;
+}
+
+
+.box-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 50%;
+    margin: auto;
+    height: 80%;
+}
+
+.firstHalf{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    gap:16px;
+    flex-direction: column;
+
+
+}
+
+.secondHalf{
+    width: 50%;
+    color: rgb(82, 255, 197);
+    justify-content: center;
+    display: flex;
+
+
+}
+
+.secondHalf img{
+
+    width: 150px;
+    height:150px;
+
+    border: 4px solid white;
+    border-radius:50%;
+    display: block;
+    margin: auto;
+
+}
+
+.text-big{
+    font-size: 41px
+}
+
+.text-small{
+    font-size: 18px;
+}
+
+.btn{
+
+    padding: 14px 28px;
+    font-size: 18px;
+    margin: 7px 0;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover{
+
+    padding: 14px 28px;
+    font-size: 18px;
+    margin: 7px 0;
+    border: 2px solid red;
+    border-radius: 8px;
+    background: none;
+    color: red;
+    cursor: pointer;
+}
+
+element.style{
+
+    padding: 10px 23px;
+}
+.btn-sm-search{
+    padding: 5px 14px;
+    background: none;
+    font-size: 18px;
+    margin: 7px 0;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+.btn-sm-search:hover{
+    padding: 5px 14px;
+    background: none;
+    font-size: 18px;
+    margin: 7px 0;
+    border: 2px solid red;
+    border-radius: 8px;
+    background: none;
+    color:red;
+    cursor: pointer;
+
+}
+
+.secRight{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%; 
+    margin: auto;
+
+}
+
+.match-photo{
+
+    border-radius: 50%;
+    /* border: 3px solid grey; */
+    align-items: center;
+
+}
+
+
