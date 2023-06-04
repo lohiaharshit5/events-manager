@@ -115,14 +115,49 @@ body{
     fill: #717171;
 }
 
+.food-icon {
+    height: 20px;
+
+    fill: grey;
+}
+.swaps-icon {
+    height: 20px;
+
+    fill: grey;
+}
+.grey-included ul{
+    padding:  0px;
+    margin: 0;
+}
+.grey-included li{
+    color:#717171;
+    list-style: none;
+    padding: 3px;
+}
+.gift-icon{
+    height: 20px;
+
+    stroke: grey;
+}
+.dance-icon{
+    height: 25px;
+    /* padding: 0 3px; */
+    fill: grey;
+}
+
 .calendar-icon {
     height: 18px;
     fill: #717171;
+
     padding-right: 4px;
     padding-bottom: 0;
 }
   
-  
+.thumbs-up-icon{
+    width: 36px;
+    fill: rgb(88, 197, 88);
+    cursor: pointer;
+}
 
 .description-box{
     width: 50%;
@@ -139,15 +174,53 @@ body{
     border-radius: 10px;
 }
 
+.whats-included-box{
+
+    font-family: 'Noto Sans', sans-serif;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 234);
+    border-radius: 10px;
+}
+
 .map{
     color: #EC5E71;
+    cursor: pointer;
 }
 
 .event-header{
     padding: 10px 10px;
 
 }
+.thumbs-up{
+    display: flex;
+    top: 0;
+    /* justify-content: center; */
+    align-items: flex-start;
 
+}
+.interested-btn{
+    background: none;
+    outline: none;
+    border-radius: 5px;
+    position: absolute;
+    font-size: 18px;
+    right: 25px;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid red;
+    padding: 10px 15px;
+    color: red;
+}
+.likes-number{
+    font-size: 20px;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.people-interest-text{
+    font-size: 14px;
+    color:rgb(143, 139, 139)
+}
 
 
 .date-time-venue{
@@ -189,6 +262,11 @@ body{
 .desc-head{
     font-family: 'Mukta', sans-serif;
 
+    font-size: 18px;
+}
+
+.included-head{
+    font-family: 'Mukta', sans-serif;
     font-size: 18px;
 }
 
