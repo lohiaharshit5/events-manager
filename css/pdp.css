@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&display=swap');
+
+
 
 *{
     box-sizing: border-box;
@@ -16,6 +21,10 @@ body{
 .my-slides img{
 
     vertical-align: middle;
+    height: 300px;
+    border-radius: 20px;
+    width: 100%;
+    margin: 0;
 }
 .slide-show-continer{
     max-width: 80%;
@@ -27,15 +36,204 @@ body{
 .prev, .next{
     cursor: pointer;
     position: absolute;
-    top:50% ;
+    top:20% ;
     width: auto;
     padding: 16px;
-    margin-top: -22px;
-    color: white;
+
+    color: red;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+
+}
+
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+
+}
+
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8);
+
+}
+.text{
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 8px;
+}
+
+.numbertext{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+
+}
+
+.dot{
+    cursor:pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    align-items: center;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover{
+    background-color: #717171;
+}
+
+.multiple-dots{
+    text-align: center;
+}
+
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+
+}
+
+.first-half{
+
+    padding: 5px 0px;
+    
+}
+.location-icon {
+    height: 18px;
+    fill: #717171;
+}
+
+.calendar-icon {
+    height: 18px;
+    fill: #717171;
+    padding-right: 4px;
+    padding-bottom: 0;
+}
+  
+  
+
+.description-box{
+    width: 50%;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 234);
+    border-radius: 10px;
+}
+.interest-box{
+
+    font-family: 'Noto Sans', sans-serif;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 234);
+    border-radius: 10px;
+}
+
+.map{
+    color: #EC5E71;
+}
+
+.event-header{
+    padding: 10px 10px;
+
+}
+
+
+
+.date-time-venue{
+
+
+    color: #717171;
+    padding: 15px 10px;
+}
+
+/* .date-time-venue svg{
+
+    height: 18px;
+    fill: #717171;
+} */
+
+
+
+
+.book-btn{
+
+
+    color:white;
+    font-family: 'Mukta', sans-serif;
+    background-color: red;
+    padding: 14px 28px;
+    font-size: 30px;
+    margin: 7px 0;
+    width: 100%;
+    border: none;
+    margin: 0;
+    background-color: none  ;
+    cursor:pointer;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.desc-head{
+    font-family: 'Mukta', sans-serif;
+
+    font-size: 18px;
+}
+
+@-webkit-keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+
+}
+
+@keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media only screen and (max-width:300px){
+    .prev, .next, .text{
+        font-size: 11px   ;
+        top:15%;
+    }
+    .dot{
+        height: 10px;
+        width: 10px;
+    }
+    .description-box{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .prev, .next, .text{
+        font-size: 14px   ;
+        top:12%;
+    }
+    .description-box{
+        width: 100%;
+    }
+}
+
+@media only screen and  (min-width: 500px) and (max-width: 1500px) {
+    .prev, .next, .text{
+        font-size: 14px   ;
+        top:12%;
+    }
+    .description-box{
+        width: 100%;
+    }
 
 }
