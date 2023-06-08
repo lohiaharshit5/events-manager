@@ -175,10 +175,7 @@ html{
 .text-small{
     font-size: 18px;
 }
-.interest-box{
-    display: flex;
-    justify-content: space-between;
-}
+
 .btn{
 
     padding: 14px 28px;

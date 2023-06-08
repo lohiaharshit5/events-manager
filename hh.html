@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Sign-In Example</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        function handleSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // User ID
+            console.log('Name: ' + profile.getName()); // User display name
+            console.log('Email: ' + profile.getEmail()); // User email address
+            // You can access more user information from the 'profile' object
+        }
+    </script>
+</head>
+<body>
+    <div id="g_id_onload"
+         data-client_id="361278454891-sve6t24fgsham41fafeohos16b35sg3l"
+         data-callback="handleSignIn">
+    </div>
+    <div class="g_id_signin"></div>
+</body>
+</html>
