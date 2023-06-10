@@ -302,8 +302,12 @@ body{
     position: fixed;
     width: 100%;
     bottom: 1%;
-    border-radius: 8px;
+    border-radius: 15px;
 
+}
+
+.desc-body{
+    color:#717171;
 }
 
 .desc-head{
@@ -361,4 +365,110 @@ body{
         width: 100%;
     }
 
+}
+
+#bottomSheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    border-top: 2px solid red ;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius:20px;
+    height: 0;
+    background-color:#F9EDED;
+    transition: height 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  
+  #bottomSheet.open {
+    height: 400px; /* Adjust the height as per your requirements */
+  }
+  
+  .content {
+    padding: 20px;
+  }
+
+  .discount-text{
+    color: #717171;
+    font-size: 12px;
+  }
+
+  .addtocart-container{
+    display: flex;
+  }
+
+  .add-passes{
+    margin-left: auto;
+    border: 1px solid red;
+    padding: 6px 10px;
+    border-radius: 19px;
+    color: red;
+    float: right;
+    background:#ffffff;
+    font-weight: bold;
+}
+
+.gender-button{
+    margin-left: auto;
+    border: 1px solid red;
+    padding: 6px 10px;
+    border-radius: 19px;
+    color: red;
+    float: right;
+    background:#ffffff;
+    font-weight: bold;
+}
+
+.select-pass-quantity{
+    padding-top: 8px 0;
+    margin-top: 2px;
+}
+
+.add-to-cart{
+    height: 18px;
+    margin-bottom: -5px;
+    fill: red;
+}
+
+.gender-selection-box{
+    display: flex;
+}
+
+.gender-icon{
+    height: 18px;
+    fill: red;
+    margin-bottom: -4px;
+}
+
+.select-gender{
+    margin-top:3px
+}
+
+
+.get-pass-button{
+    bottom: 0px;
+    transform: translate(-50%, -50%);
+    /* padding: 22px 10px; */
+    border: none;
+    color: white;
+    background: red;
+    padding: 14px 17px;
+    border-radius: 26px;
+    width: 89%;
+    position: absolute;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.bottom-part{
+    display: flex;
+}
+
+.gender-discount-text{
+    font-size: 10px;
+    display: flex;
 }

@@ -46,3 +46,15 @@ function autoShowSlides() {
   slides[autoSlideIndex - 1].style.display = "block";
   setTimeout(autoShowSlides, 5000); // Change image every 2 seconds
 }
+
+
+
+  var bottomSheet = document.getElementById("bottomSheet");
+  var openBtn = document.getElementById("book");
+
+  openBtn.addEventListener("click", ()=> {
+    bottomSheet.classList.toggle("open");
+  });
+
+
+
