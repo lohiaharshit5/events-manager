@@ -58,3 +58,9 @@ function autoShowSlides() {
 
 
 
+  var crossButton = document.getElementById("cross-icon-black");
+
+  crossButton.addEventListener("click", ()=>{
+    bottomSheet.classList.toggle("open");
+  });
+
