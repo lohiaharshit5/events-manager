@@ -552,3 +552,14 @@ body{
     text-decoration: line-through;
     color: #717171;
 }
+
+
+#loader{
+    position: fixed;
+    width:110%;
+    height: 100vh;
+    background:#fff
+    url('/img/Skateboarding.gif') no-repeat center;
+    z-index: 99999;
+
+}

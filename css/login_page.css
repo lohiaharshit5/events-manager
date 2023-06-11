@@ -182,3 +182,12 @@ body{
       display: none;
   }
 }
+#loader{
+  position: fixed;
+  width:110%;
+  height: 100vh;
+  background:#fff
+  url('https://i.gifer.com/1Ktv.gif') no-repeat center;
+  z-index: 99999;
+
+}

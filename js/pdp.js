@@ -64,3 +64,23 @@ function autoShowSlides() {
     bottomSheet.classList.toggle("open");
   });
 
+
+  function showLoader() {
+    var button = document.getElementById("myButton");
+    var loader = document.createElement("span");
+    loader.classList.add("loader");
+    button.innerHTML = "";
+    button.appendChild(loader);
+  
+    // Simulating asynchronous operation
+    setTimeout(function() {
+      // Remove the loader and restore the button text
+      button.removeChild(loader);
+      button.innerHTML = "Submit";
+    }, 2000);
+  }
+  
+  var preloader = document.getElementById("loader");
+  function loaderfunction(){
+    preloader.style.display = 'none';
+  }
