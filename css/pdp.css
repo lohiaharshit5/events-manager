@@ -8,9 +8,12 @@
 *{
     box-sizing: border-box;
 }
+
 body{
 
     font-family:'Poppins', sans-serif ;
+    background: #f8e2e2 ;  
+    
 }
 
 /* .my-slides{
@@ -174,26 +177,37 @@ body{
 }
 
 .description-box{
-    width: 50%;
+    /* width: 50%; */
     font-family: 'Noto Sans', sans-serif;
     padding: 10px 10px;
-    background-color: rgb(255, 255, 234);
+    background-color: white;
     border-radius: 10px;
+
+
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
 }
+
+.book-btn-box{ display: flex;
+justify-content: center;
+align-items: center;}
+
 .interest-box{
 
     font-family: 'Noto Sans', sans-serif;
     padding: 10px 10px;
-    background-color: rgb(255, 255, 234);
+    background-color: white;
     border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .whats-included-box{
 
     font-family: 'Noto Sans', sans-serif;
     padding: 10px 10px;
-    background-color: rgb(255, 255, 234);
+    background-color: white;
     border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .map{
@@ -255,32 +269,12 @@ body{
     fill: #717171;
 } */
 
-
-
-
-.book-btn{
-
-
-    color:white;
-
-    font-family: 'Mukta', sans-serif;
-    background-color: red;
-    padding: 8px 28px;
-    font-size: 20px;
-    margin: 7px 0;
-    width: 100%;
-    border: none;
-    margin: 0;
-    background-color: none  ;
-    cursor:pointer;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%); 
-}
 .ticket-icon{
-    height: 20px;
+    height: 18px;
     fill: white;
+    display: flex;
+    align-items: center;
+
 }
 
 .hry-text{
@@ -294,8 +288,45 @@ body{
 
 }
 
+.book-btn {
+    position: fixed;
+    bottom: 10px;
+    padding-top: 22px;
+    padding-bottom: 9px;
+    font-weight: bold;
+    width: 90%;
+    letter-spacing: 2px;
+    font-family:'Mukta', sans-serif ;
+    background-color: red;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .strip {
+    position: absolute;
+    top: 0;
+    gap:4px;
+    left: 0;
+    font-family:'Mukta', sans-serif;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    width: 100%;
+    height: 16px;
+    background-color: black;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 5px;
+    color: #fff;
+  }
+  
 
-.bottom-button{
+/* .bottom-button{
     background-color:rgb(0, 0, 0);
     height: 50px;
     left:0%;
@@ -303,8 +334,7 @@ body{
     width: 100%;
     bottom: 1%;
     border-radius: 15px;
-
-}
+} */
 
 .desc-body{
     color:#717171;

@@ -1,0 +1,25 @@
+.strip-button {
+    position: relative;
+    padding: 10px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 5px;
+    color: #fff;
+  }
+  
