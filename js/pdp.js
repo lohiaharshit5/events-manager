@@ -84,3 +84,6 @@ function autoShowSlides() {
   function loaderfunction(){
     preloader.style.display = 'none';
   }
+
+  const reviewsContainer = document.querySelector('.review-content');
+
