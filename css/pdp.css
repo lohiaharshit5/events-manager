@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
+
 
 
 
@@ -604,13 +606,17 @@ align-items: center;}
     height: 300px;
     overflow-x: scroll;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #f9f9f9;
     padding: 10px;
     display: flex;
+
     overflow-x: auto;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+
+
 
 .feedback{
     min-width: 200px;
@@ -678,10 +684,11 @@ padding: 2px 15px;}
     border-radius: 50px;
     padding: 5px 10px;
     height: 30px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Pacifico', cursive;
     }
 
 .paper-clip{
@@ -707,4 +714,42 @@ padding: 2px 15px;}
     height: 23px;
     stroke: white;
     transform: rotate(180deg);
+}
+
+
+.height-maker{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.hhhhh {
+    height: 20px;
+    width: 4px;
+    background: red;}
+
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    font-family:'Mukta', sans-serif ;
+    font-weight: bold;
+}
+
+.review-subhead{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    padding: 6px;
+    color: #717171;
+    background-color: white;
+    font-family:'Poppins', sans-serif ;
+
+
 }

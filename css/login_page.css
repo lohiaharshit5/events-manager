@@ -139,7 +139,7 @@ body{
 .google-icon{
   height: 35px;
 }
-.google-login{
+.g-signin2{
   justify-content: center;
   align-items: center;
   display: flex;
