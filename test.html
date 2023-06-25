@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/test.css">
-    <title>Document</title>
+  <title>Google Login Example</title>
+  <!-- Include the Google Sign-In API -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+
 </head>
 <body>
-    <div class="reviews-container">
-        <div class="reviews-content">
-          <!-- Reviews will be dynamically added here -->
-        </div>
-      </div>
-      <script src="/js/test.js"></script>
+  <!-- Create a button for Google Sign-In -->
+  <div id="gSignInWrapper" data-onsuccess="onSignIn">
+    <div id="customBtn">
+      <span class="icon"></span>
+      <span class="buttonText" ><button onclick="getParams()"> Sign in with Google</button> </span>
+    </div>
+  </div>
+
+  <!-- Include the Google Sign-In script -->
+  <script src="/js/tests.js"></script>
 </body>
 </html>

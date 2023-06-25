@@ -87,3 +87,4 @@ function autoShowSlides() {
 
   const reviewsContainer = document.querySelector('.review-content');
 
+  console.log(window.location.href)

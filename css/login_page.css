@@ -139,7 +139,9 @@ body{
 .google-icon{
   height: 35px;
 }
-.g-signin2{
+
+/* g-signin2 */
+.google-login{
   justify-content: center;
   align-items: center;
   display: flex;
@@ -154,6 +156,10 @@ body{
   cursor: pointer;
   align-items: center;
   gap: 14px;
+}
+
+.google-login-anchor-tag{
+  text-decoration: none;
 }
 
 .or-text{
