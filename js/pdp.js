@@ -89,8 +89,25 @@ function autoShowSlides() {
 
 
   const urlParams = new URLSearchParams(window.location.search);
-  const myParam = urlParams.get('code');
+  const googleCode = urlParams.get('code');
+  console.log(urlParams)
+  console.log(googleCode)
 
-  console.log(myParam)
+  var apiUrl = 'http://localhost:8000/api/?code=' + encodeURIComponent(googleCode);
+
+
+  fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    // Process the response data
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error('Error:', error);
+  });
+
+
+  // axios
 
 
