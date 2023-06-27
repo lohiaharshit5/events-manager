@@ -92,9 +92,10 @@ function autoShowSlides() {
   const googleCode = urlParams.get('code');
   console.log(urlParams)
   console.log(googleCode)
+  var modifiedGoogleCode = googleCode.replace(/^4\//, "");
 
-  var apiUrl = 'http://localhost:8000/api/?code=' + encodeURIComponent(googleCode);
 
+  var apiUrl = 'http://localhost:8000/googlelogin/' + String(modifiedGoogleCode);
 
   fetch(apiUrl)
   .then(response => response.json())
@@ -107,6 +108,8 @@ function autoShowSlides() {
     console.error('Error:', error);
   });
 
+
+  
 
   // axios
 

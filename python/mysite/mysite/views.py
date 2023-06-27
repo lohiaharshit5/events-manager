@@ -28,22 +28,21 @@ def googlelogin(requests, google_code):
 # Start the OAuth 2.0 flow
     auth_url, _ = flow.authorization_url(prompt='consent')
     print('Please go to this URL to authorize access: {}'.format(auth_url))
-    flow.fetch_token(code=google_code)
+    flow.fetch_token(code='4/' +google_code)
     credentials_info = json.loads(flow.credentials.to_json())
     crd = Credentials.from_authorized_user_info(info=credentials_info)
     people_service = build('people', 'v1', credentials=crd)
 
     # Retrieve the user's email and name
     user_profile = people_service.people().get(resourceName='people/me', personFields='emailAddresses,names,addresses,birthdays,coverPhotos,genders,imClients,locales,metadata,phoneNumbers,photos,residences,taglines,urls').execute()
-    print('Email: {}'.format(user_profile['emailAddresses'][0]['value']))
-    print('Name: {}'.format(user_profile['names'][0]['displayName']))
-    print('Profile Photo: {}'.format(user_profile['photos'][0]['url']))
+    name = user_profile['names'][0]['displayName']
+    email = user_profile['emailAddresses'][0]['value']
+    profile_photo_link = user_profile['photos'][0]['url']
     response = {
-        'param1': user_profile['emailAddresses'][0]['value'],
-        'param2': user_profile['names'][0]['displayName'],
+        'param1': name,
+        'param2': email,
         'result': user_profile['photos'][0]['url']
     }
-    return JsonResponse(response)
-
+    return HttpResponse(json.dumps(response), content_type='application/json' )
 
 
