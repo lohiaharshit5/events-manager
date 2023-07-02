@@ -95,8 +95,8 @@ function autoShowSlides() {
   var modifiedGoogleCode = googleCode.replace(/^4\//, "");
 
 
-  var apiUrl = 'http://localhost:8000/googlelogin/' + String(modifiedGoogleCode);
-
+  var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
+  
   fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
