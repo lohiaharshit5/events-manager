@@ -96,17 +96,20 @@ function autoShowSlides() {
 
 
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
+  axios.get(apiUrl).then(res=>console.log(res))
+
   
-  fetch(apiUrl)
-  .then(response => response.json())
-  .then(data => {
-    // Process the response data
-    console.log(data);
-  })
-  .catch(error => {
-    // Handle any errors
-    console.error('Error:', error);
-  });
+
+  // fetch(apiUrl)
+  // .then(response => response.json())
+  // .then(data => {
+  //   // Process the response data
+  //   console.log(data);
+  // })
+  // .catch(error => {
+  //   // Handle any errors
+  //   console.error('Error:', error);
+  // });
 
 
   
