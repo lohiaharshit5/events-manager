@@ -129,7 +129,7 @@ function autoShowSlides() {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify(requestBody)
+  body: JSON.stringify(google_data)
 })
   .then(response => response.json())
   .then(data => {
