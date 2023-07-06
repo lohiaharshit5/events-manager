@@ -108,12 +108,16 @@ function autoShowSlides() {
     // Process the response data
     console.log(data);
     google_data= data;
+    anotherAPIFunction();
+
   })
   .catch(error => {
     // Handle any errors
     console.error('Error:', error);
   });
-  console.log(google_data)
+  function anotherAPIFunction(){
+    console.log(google_data)
+  }
 
 // To post the data into the database.
 
