@@ -108,16 +108,18 @@ function autoShowSlides() {
     // Process the response data
     console.log(data);
     google_data= data;
-    anotherAPIFunction();
-
   })
   .catch(error => {
     // Handle any errors
     console.error('Error:', error);
   });
-  function anotherAPIFunction(){
-    console.log(google_data)
-  }
+
+  function anotherAPIFunction(google_data) {
+    // Create the request body with the xxxxx variable
+    var requestBody = {
+      data: google_data,
+      // Other properties as needed
+    };
 
 // To post the data into the database.
 
@@ -126,7 +128,7 @@ function autoShowSlides() {
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify(google_data),
+  body: JSON.stringify(requestBody)
 })
   .then(response => response.json())
   .then(data => {
@@ -135,7 +137,7 @@ function autoShowSlides() {
   .catch(error => {
     console.error('Error:', error);
   });
-
+  }
 
 
   
