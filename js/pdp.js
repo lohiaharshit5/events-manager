@@ -133,6 +133,8 @@ function autoShowSlides() {
   .then(response => response.json())
   .then(data => {
     console.log('Response:', data);
+    console.log('POST api working');
+    console.log(requestBody);
   })
   .catch(error => {
     console.error('Error:', error);
