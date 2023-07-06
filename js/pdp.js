@@ -95,11 +95,9 @@ function autoShowSlides() {
   var modifiedGoogleCode = googleCode.replace(/^4\//, "");
 
 
+// To get the google data from the google api
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
   // axios.get(apiUrl).then(res=>console.log(res))
-
-  
-
   fetch(apiUrl, {headers: {
     "Content-Type": "application/json",
     // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -109,11 +107,30 @@ function autoShowSlides() {
   .then(data => {
     // Process the response data
     console.log(data);
+    var google_data= data
   })
   .catch(error => {
     // Handle any errors
     console.error('Error:', error);
   });
+
+// To post the data into the database.
+
+  fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(google_data),
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log('Response:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
 
 
   

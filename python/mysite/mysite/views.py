@@ -6,6 +6,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 import requests
 import json
+import pymongo
 
 def index(requests):
     return HttpResponse("<h1>Or bhai website banali<h1>")
@@ -44,5 +45,13 @@ def googlelogin(requests, google_code):
         'result': user_profile['photos'][0]['url']
     }
     return HttpResponse(json.dumps(response), content_type='application/json' )
+
+
+    def post_google_data(requests, name, email, profile_photo):
+        filter = {"email":email}
+        change = {"$set":{"name":name, "email":email, "profile_photo":profile_photo}}
+        user_profile.update_one(filter, change, upsert=True)
+
+
 
 
