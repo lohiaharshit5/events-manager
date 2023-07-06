@@ -108,6 +108,7 @@ function autoShowSlides() {
     // Process the response data
     console.log(data);
     google_data= data;
+    anotherAPIFunction(google_data);
   })
   .catch(error => {
     // Handle any errors
