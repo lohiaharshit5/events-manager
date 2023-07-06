@@ -113,6 +113,7 @@ function autoShowSlides() {
     // Handle any errors
     console.error('Error:', error);
   });
+  console.log(google_data)
 
 // To post the data into the database.
 
