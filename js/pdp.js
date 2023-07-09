@@ -98,7 +98,8 @@ function autoShowSlides() {
 // To get the google data from the google api
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
   // axios.get(apiUrl).then(res=>console.log(res))
-  fetch(apiUrl, {headers: {
+  fetch(apiUrl, 
+    {headers: {
     "Content-Type": "application/json",
     // 'Content-Type': 'application/x-www-form-urlencoded',
   }}

@@ -628,20 +628,20 @@ align-items: center;}
 }
 
 .f1{
-    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('/img/feedbackimage1.jpg') no-repeat center;
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('https://storage.googleapis.com/youthstring.appspot.com/img/feedbackimage1-min.jpg') no-repeat center;
 }
 
 .f2{
-    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('/img/couple_f2.jpg') no-repeat center; 
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('https://storage.googleapis.com/youthstring.appspot.com/img/couple_f2-min.jpg') no-repeat center; 
 }
 .f3{
-    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('/img/couple_f3.jpg') no-repeat center;
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('https://storage.googleapis.com/youthstring.appspot.com/img/couple_f3-min.jpg') no-repeat center;
 }
 .f4{
-    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('/img/couple_f4.jpg') no-repeat center;
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('https://storage.googleapis.com/youthstring.appspot.com/img/couple_f4-min.jpg') no-repeat center;
 }
 .f5{
-    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('/img/couple_f5.jpg') no-repeat center;
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgb(0, 0, 0)),url('https://storage.googleapis.com/youthstring.appspot.com/img/couple_f5-min.jpg') no-repeat center;
 }
 
 

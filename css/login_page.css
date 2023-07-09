@@ -21,6 +21,10 @@ section {
   align-items: center;
 }
 
+#otp{
+  display: none;
+}
+
 section.side {
   background: url(./images/bk.png) no-repeat;
   background-size: 100% 102%;
@@ -109,7 +113,7 @@ input:focus ~ i {
   color: red;
 }
 
-button.submit {
+button.send-otp-button {
   color: #fff;
   padding: 14px 64px;
   margin: 32px auto;
@@ -121,7 +125,7 @@ button.submit {
   transition: opacity 0.4s;
 }
 
-button.submit:hover {
+button.send-otp-button:hover {
   opacity: 0.9;
 }
 
@@ -197,5 +201,26 @@ body{
   z-index: 99999;
 
 }
+
+#errorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+ }
+
+ .error{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+ }
+
+ #recaptcha-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ }
 
 /* https://i.gifer.com/1Ktv.gif */
