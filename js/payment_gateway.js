@@ -55,8 +55,8 @@ const urlParams = new URLSearchParams(window.location.search);
   });
   }
 
-
-  console.log(globalData.google_response);
+  console.log('global-responseis fetched');
+  console.log('global-responseis fetched',globalData.google_response);
   var email =globalData.google_response.emailAddresses[0].value;
   console.log(email);
   
