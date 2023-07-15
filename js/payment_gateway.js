@@ -17,7 +17,6 @@ const urlParams = new URLSearchParams(window.location.search);
   .then(response => response.json())
   .then(data => {
     // Process the response data
-    console.log(data);
     google_data= data;
     console.log('google_data -  ', google_data)
     anotherAPIFunction(google_data);
@@ -55,6 +54,9 @@ const urlParams = new URLSearchParams(window.location.search);
   }
 
 
+  var email =data.emailAddresses[0].value;
+  console.log(email);
+  
   
 
   // axios
