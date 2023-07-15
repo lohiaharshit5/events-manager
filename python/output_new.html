@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- <title>
+    Invoice</title>
+    <link rel = "icon" href = 
+    "https://storage.googleapis.com/youthstring.appspot.com/img/logo_youthify.png" 
+            type = "image/x-icon"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Makasar&family=Pattaya&family=Red+Rose&display=swap" rel="stylesheet">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Makasar&family=Pattaya&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
+  .invoice-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    color: #555;
+  }
+
+  .invoice-date{
+    height: 165px;
+  }
+
+  .upper-side{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 30px;
+    align-items: center;
+
+  }
+
+  .logo-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-only{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+    max-width: 40%;
+  }
+  
+  .invoice-box table {
+    width: 100%;
+    line-height: inherit;
+    text-align: left;
+  }
+
+
+  .invoice-box table td {
+    /* padding: 5px; */
+    vertical-align: top;
+  }
+
+  .column{
+    display: flex;
+    justify-content: center;
+    width:144%;
+
+  }
+  
+  .invoice-box table tr td:nth-child(2) {
+    text-align: right;
+  }
+  
+  .invoice-box table tr.top table td {
+    padding-bottom: 20px;
+  }
+  
+  .invoice-box table tr.top table td.title {
+    font-size: 45px;
+    line-height: 45px;
+    color: #333;
+  }
+  
+  .invoice-box table tr.information table td {
+    padding-bottom: 40px;
+  }
+  
+  .invoice-box table tr.heading td {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+  }
+  
+  .invoice-box table tr.details td {
+    padding-bottom: 20px;
+  }
+  
+  .invoice-box table tr.item td{
+    border-bottom: 1px solid #eee;
+  }
+  
+  .invoice-box table tr.item.last td {
+    border-bottom: none;
+  }
+
+  .youth{
+    color:red;
+    font-family: 'Caprasimo', cursive;
+    font-size: 20px;
+  font-weight:bolder;
+
+  }
+
+  .logo-line{
+    font-family: 'Pattaya', sans-serif;
+    font-weight:lighter;
+    font-size: 10px;
+  }
+
+  .string{
+    font-family: 'Red Rose', cursive;
+
+    font-size: 20px;
+    color: BLACK;
+  }
+  
+  .invoice-box table tr.total td:nth-child(2) {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+    
+    .invoice-box table tr.information table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  }
+  div.divFooter {
+    position: fixed;
+    height: 30px;
+    background-color: purple;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  }
+  
+  /** RTL **/
+  .rtl {
+    direction: rtl;
+    font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  }
+  
+  .rtl table {
+    text-align: right;
+  }
+  
+  .rtl table tr td:nth-child(2) {
+    text-align: left;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="upper-side">
+    <div class="logo-title">
+      <div class="logo-only"><img src="https://storage.googleapis.com/youthstring.appspot.com/img/logo_youthify.png" style="height: 50px;">
+      </div>
+   <div class="company-name">   <span class="youth"> You</span><span class="string">thstring</span></div>
+   <span class="logo-line"> A string that connects People</span><span> <br>
+      </div>
+
+
+      <div class="date-container"><div class="invoice-date">
+      Invoice #: 1222<br>
+      Created: July, 16 2023<br>
+    </div>
+  </div>
+
+  </div>
+
+
+
+  <div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+      <tr class="top">
+        <td colspan="2">
+          <table>
+            <tr>
+
+              <td>
+              
+          </table>
+        </td>
+      </tr>
+      
+      <tr class="information">
+        <td colspan="1">` 
+          <table>
+            <tr>
+
+              <td>
+                Customer Name: <b>Harshit Lohia</b><br>
+                Order ID: 202222233673<br>
+                Customer ID: 122<br>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr class="heading">
+
+        <td class="column" colspan="2">
+          Order Summary
+        </td>
+
+      </tr>
+      
+      <tr class="item">
+        <td>
+          Blind Date
+        </td>
+        <td>
+          Rs 999/-
+        </td>
+      </tr>
+      
+      <tr class="item">
+        <td>
+          Quantity
+        </td>
+        <td>
+          2 Passes
+        </td>
+      </tr>
+      
+      <tr class="item last">
+        <td>
+          GST
+        </td>
+        <td>
+          Rs 180/-
+        </td>
+      </tr>
+      
+      <tr class="total">
+        <td></td>
+        <td>
+           Total: Rs1200
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- <div class="summary-line">This is to</div> -->
+  <div class="divFooter"></div>
+</body>
+</html>

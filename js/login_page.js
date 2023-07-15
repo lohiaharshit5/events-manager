@@ -43,7 +43,7 @@ function codeverify() {
     coderesult.confirm(code).then(function () {
         console.log(code);
         console.log('OTP Verified - opening result page');
-        window.location.href = "https://events-manager-six.vercel.app";
+        window.location.href = "https://events-manager-six.vercel.app/payment_gateway.html";
 
     }).catch(function () {
         console.log('OTP Not correct');
