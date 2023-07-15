@@ -4,6 +4,7 @@ const urlParams = new URLSearchParams(window.location.search);
   console.log(googleCode)
   var modifiedGoogleCode = googleCode.replace(/^4\//, "");
 
+  var globalData ={};
 
 // To get the google data from the google api
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
@@ -17,7 +18,8 @@ const urlParams = new URLSearchParams(window.location.search);
   .then(response => response.json())
   .then(data => {
     // Process the response data
-    var google_data= data;
+    google_data= data;
+    globalData.google_response= data
     console.log('google_data -  ', google_data)
     anotherAPIFunction(google_data);
   })
@@ -54,8 +56,8 @@ const urlParams = new URLSearchParams(window.location.search);
   }
 
 
-
-  var email =google_data.emailAddresses[0].value;
+  console.log(globalData.google_response);
+  var email =globalData.google_response.emailAddresses[0].value;
   console.log(email);
   
   
