@@ -42,3 +42,99 @@ var google = {'resourceName': 'people/111372045860486327403',
 console.log(google);
 console.log("now check");
 console.log("email_addresses-",google.emailAddresses[0].value);
+
+
+var ff ={
+  "data": {
+      "resourceName": "people/111916258692807037546",
+      "etag": "%EhUBAgMEBgcICQsPEBQZJS41Nz0+P0AaBAECBQciDFBKNHF5V2gzQmtrPQ==",
+      "metadata": {
+          "sources": [
+              {
+                  "type": "PROFILE",
+                  "id": "111916258692807037546",
+                  "etag": "#PuJSWxjyVZA=",
+                  "profileMetadata": {
+                      "objectType": "PERSON",
+                      "userTypes": [
+                          "GOOGLE_USER"
+                      ]
+                  },
+                  "updateTime": "2023-07-13T07:38:15.132300Z"
+              }
+          ],
+          "objectType": "PERSON"
+      },
+      "locales": [
+          {
+              "metadata": {
+                  "primary": true,
+                  "source": {
+                      "type": "ACCOUNT",
+                      "id": "111916258692807037546"
+                  }
+              },
+              "value": "en"
+          }
+      ],
+      "names": [
+          {
+              "metadata": {
+                  "primary": true,
+                  "source": {
+                      "type": "PROFILE",
+                      "id": "111916258692807037546"
+                  },
+                  "sourcePrimary": true
+              },
+              "displayName": "Harshit Lohia",
+              "familyName": "Lohia",
+              "givenName": "Harshit",
+              "displayNameLastFirst": "Lohia, Harshit",
+              "unstructuredName": "Harshit Lohia"
+          }
+      ],
+      "coverPhotos": [
+          {
+              "metadata": {
+                  "primary": true,
+                  "source": {
+                      "type": "PROFILE",
+                      "id": "111916258692807037546"
+                  }
+              },
+              "url": "https://lh3.googleusercontent.com/c5dqxl-2uHZ82ah9p7yxrVF1ZssrJNSV_15Nu0TUZwzCWqmtoLxCUJgEzLGtxsrJ6-v6R6rKU_-FYm881TTiMCJ_=s1600",
+              "default": true
+          }
+      ],
+      "photos": [
+          {
+              "metadata": {
+                  "primary": true,
+                  "source": {
+                      "type": "PROFILE",
+                      "id": "111916258692807037546"
+                  }
+              },
+              "url": "https://lh3.googleusercontent.com/a/AAcHTteeRT3gHHUDG0dJ12MJrd5Z0JFTuK8IKPE8peCa-OHa=s100",
+              "default": true
+          }
+      ],
+      "emailAddresses": [
+          {
+              "metadata": {
+                  "primary": true,
+                  "verified": true,
+                  "source": {
+                      "type": "ACCOUNT",
+                      "id": "111916258692807037546"
+                  },
+                  "sourcePrimary": true
+              },
+              "value": "lohiaharshit@gmail.com"
+          }
+      ]
+  }
+}
+
+console.log(ff.data.emailAddresses[0].value, 'test');

@@ -48,7 +48,9 @@ const urlParams = new URLSearchParams(window.location.search);
   .then(data => {
     console.log('Response:', data);
     console.log('POST api working');
-    console.log(requestBody);
+    email = requestBody;
+    anotherAPIFunction(email);
+    console.log('email',email.data.emailAddresses[0].value);
   })
   .catch(error => {
     console.error('Error:', error);
@@ -57,7 +59,6 @@ const urlParams = new URLSearchParams(window.location.search);
 
   console.log('global-responseis fetched');
   console.log('global-responseis fetched',globalData.google_response);
-  var email =globalData.google_response.emailAddresses[0].value;
   console.log(email);
   
   
