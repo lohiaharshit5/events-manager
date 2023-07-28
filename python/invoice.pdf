@@ -1,0 +1,18 @@
+
+    <html>
+        <head>
+            <title>Invoice</title>
+        </head>
+        <body>
+            <h1>Invoice</h1>
+            <p>Invoice Number: 123456</p>
+            <p>Customer Name: Harshit Lohia</p>
+            <p>Order Number: 2022222w3873</p>
+            <p>Customer ID: 122</p>
+            <p>Blind Date: 2 Passen</p>
+            <p>Quantity: 1</p>
+            <p>GST: 180</p>
+            <p>Order Summary: 999/- + 180/- = 1179/-</p>
+        </body>
+    </html>
+    

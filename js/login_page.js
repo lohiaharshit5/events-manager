@@ -1,3 +1,29 @@
+// Get Data from the URL string
+// Assuming this code is on the next_page.html
+function getDataFromURL() {
+  // Extract the query parameter from the URL
+  var urlParams = new URLSearchParams(window.location.search);
+  var responseDataJSON = urlParams.get('data');
+
+  // Parse the JSON string back into a JavaScript object
+  var responseData = JSON.parse(responseDataJSON);
+
+  // Now you can use the responseData object to access the data from the previous page
+  console.log('discount =', responseData.discount);
+  console.log('gender =',responseData.gender);
+  console.log('quantity=',responseData.quantity);
+  console.log('final amount =',responseData.final_amount);
+  console.log('age= ', responseData.Age);
+}
+
+// Call the function to get the data when the page loads
+getDataFromURL();
+
+
+
+// Url string data ended
+
+
 
 var otp = document.getElementById("otp");
 var sendotpButton = document.getElementById("send-otp");
@@ -40,9 +66,39 @@ function render() {
 
 function codeverify() {
     var code = document.getElementById('verificationcode').value;
+    mobileNumberInput = (document.getElementById('number').value);
+    console.log('mobile-no',mobileNumberInput);
+
     coderesult.confirm(code).then(function () {
         console.log(code);
         console.log('OTP Verified - opening result page');
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log('data fetching url')
+        const responseDataJSON = JSON.parse(urlParams.get('data'));
+        console.log('data fetched-', responseDataJSON)
+        // var discount = responseData.discount;
+        const gender = responseDataJSON.gender;
+        console.log(gender)
+        const quantity=responseDataJSON.quantity;
+        console.log(quantity)
+        // var final_amount =responseData.final_amount;
+        const age=  responseDataJSON.Age;
+        console.log(age)
+        console.log(mobileNumberInput)
+        const mobileApiData = {
+          "mobile":mobileNumberInput,
+          "quantity" :quantity,
+         "gender" :gender,
+           "age" :age}
+        console.log('mobiledata',mobileApiData);
+        // Parse the JSON string back into a JavaScript object
+        console.log('mobile Api Data')
+        mobile_otp(mobileApiData)
+        .then(data => {
+          // Here you can use the data returned by the API response
+          console.log('API Response Data:', data);
+        });
+
         window.location.href = "https://events-manager-six.vercel.app/payment_gateway.html";
 
     }).catch(function () {
@@ -123,3 +179,27 @@ mobileNumberInput.addEventListener("input", function() {
   }
 });
 
+
+function mobile_otp(mobile_attributes){
+  const url = 'https://mysite-ten-psi.vercel.app/send_mobile_user_details/';
+  
+  const requestOptions = {
+  method: 'POST',
+  headers: {
+    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+    'Content-Type': 'application/json',
+  },
+  body:JSON.stringify(mobile_attributes)
+  };
+  
+  return fetch(url, requestOptions)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok.');
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}

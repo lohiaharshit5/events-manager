@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Gender</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Style for the custom dropdown */
+    .custom-dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .custom-dropdown .dropdown-button {
+      background-color: red;
+      color: white;
+      padding: 10px 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 1s;
+    }
+
+    .custom-dropdown .dropdown-button:hover {
+      background-color: #ff3333;
+    }
+
+    .custom-dropdown .dropdown-list {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1;
+      background-color: white;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      min-width: 50px;
+      border: 1px solid red;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .custom-dropdown .dropdown-list.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .custom-dropdown .dropdown-item {
+      display: flex;
+      align-items: center;
+      color: red;
+      padding: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .custom-dropdown .dropdown-item i {
+      margin-right: 10px;
+    }
+
+    .custom-dropdown .dropdown-item:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your button and list will be dynamically created here -->
+  <div class="custom-dropdown">
+    <button class="dropdown-button" onclick="toggleDropdown()">Select Gender</button>
+    <div class="dropdown-list" id="genderList">
+      <!-- List items will be dynamically added here -->
+      <a class="dropdown-item" href="#" onclick="selectGender('male')">
+        <i class="fas fa-mars"></i>Male
+      </a>
+      <a class="dropdown-item" href="#" onclick="selectGender('female')">
+        <i class="fas fa-venus"></i>Female
+      </a>
+    </div>
+  </div>
+
+  <script>
+    console.log("started")
+    // JavaScript code to handle the custom dropdown
+    function toggleDropdown() {
+        console.log("genderlist")
+        const dropdownList = document.getElementById("genderList");
+        dropdownList.classList.toggle("show");
+        dropdownList.style.display='block';
+    }
+
+    function selectGender(gender) {
+      const dropdownList = document.getElementById("genderList");
+      dropdownList.classList.remove("show");
+      console.log("eventfired")
+
+      const button = document.querySelector(".dropdown-button");
+    //   button.textContent = gender.charAt(0).toUpperCase() + gender.slice(1);
+        if(gender=='male'){
+        button.innerHTML=` <i class="fas fa-mars"></i> Male`}
+        else{
+            button.innerHTML=` <i class="fas fa-venus"></i> Female`   
+        }
+      console.log('gender',gender);
+      console.log('gender.chart',gender.charAt(0) );
+
+      console.log('gender.chart.full',gender.charAt(0).toUpperCase());
+      console.log('gender.slice',gender.slice(1) );
+    }
+
+    document.addEventListener("click", function(event) {
+      const dropdown = document.querySelector(".custom-dropdown");
+      if (!dropdown.contains(event.target)) {
+        const dropdownList = document.getElementById("genderList");
+        dropdownList.classList.remove("show");
+      }
+    });
+  </script>
+</body>
+</html>

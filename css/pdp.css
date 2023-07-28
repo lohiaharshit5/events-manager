@@ -14,7 +14,7 @@
 body{
 
     font-family:'Poppins', sans-serif ;
-    background: #f8e2e2 ;  
+    background:whitesmoke ;  
     /* #fff4f4 */
     
 }
@@ -116,9 +116,90 @@ body{
     padding: 5px 0px;
     
 }
+
+.benefits-box{
+    display: flex;
+}
+
 .location-icon {
     height: 18px;
     fill: #717171;
+}
+
+.benefits-icon{
+    height: 25px;
+}
+
+.included-icon{
+    height: 25px;
+}
+
+.Interested-icon{
+    height: 25px;
+}
+
+.header-int-event{
+    display: flex;
+    align-items: center;
+
+}
+
+#error-message.hidden {
+    opacity: 0;
+  }
+#error-message.show {
+    opacity: 100;
+  }
+
+.benefits-icon-cont{
+    border-radius: 50%;
+    background: rgb(247, 242, 202);
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+
+.interested-text{
+    padding-left: 10px;
+}
+
+.benefit-text{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.included-header-cont{
+    display: flex;
+    align-items: center;
+
+}
+
+.interested-event-icon{
+    border-radius: 50%;
+    background: rgb(255 231 241);
+    width: 45.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.included-icon-cont{
+    border-radius: 50%;
+    background: rgb(216 243 242);
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.included-head{
+    padding-left: 10px;
 }
 
 .food-icon {
@@ -531,7 +612,14 @@ align-items: center;}
 
   .get-pass{
     margin-top: -15px;
+    display: flex;
   }
+.get-pass-icon{
+    height:40px;
+    margin-top: 16px;
+    padding-right: 10px;
+}
+
 
   .age-selection-box{
     display: flex;
@@ -599,7 +687,9 @@ align-items: center;}
 
 
 /* Review-Box*/
-
+.all-templates{
+    overflow-x:scroll ;
+}
 
 .reviews-box{
 
@@ -610,7 +700,6 @@ align-items: center;}
     background-color: #f9f9f9;
     padding: 10px;
     display: flex;
-
     overflow-x: auto;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -753,3 +842,68 @@ padding: 2px 15px;}
 
 
 }
+.addtocartbtns, .age-select-btns{
+    display: flex;
+    margin-left: auto;
+
+}
+
+
+
+.minus-btn, .plus-btn,.minus-btn-age, .plus-btn-age {
+    display: none
+}
+
+.minus-btn, .minus-btn-age{
+    background: red;
+    color:white;
+    border: none;
+    padding-left:10px ;
+    padding-right: 10px;
+    font-weight: bolder;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.plus-btn, .plus-btn-age{
+    background: red;
+    color:white;
+    border: none;
+    padding-left:7px ;
+    font-weight: bolder;
+    padding-right: 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+/* 
+Starting gender selection css
+*/
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top:213px;
+    right: 21px;
+    background-color: #F9F9F9;
+    min-width: 60px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+    background-color: #e626790e;
+    border: none;
+    cursor: pointer;
+}
+.dropdown-content button:hover {
+    background-color: #F1F1F1;
+}
+/* Show the dropdown menu on click */
+.gender-selection-box.open .dropdown-content {
+    display: block;
+}
+  /* Gender List Ended */

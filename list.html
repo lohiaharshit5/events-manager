@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+.age-scroller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 60px;
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.age-option {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.2s ease;
+}
+
+.age-option:first-child {
+  margin-left: 0;
+}
+
+.age-option:last-child {
+  margin-right: 0;
+}
+
+.selected-age {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 2px solid red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: red;
+  background-color: #fff;
+  z-index: 1;
+}
+
+
+
+  </style>
+  <div class="age-scroller">
+    <div class="selected-age">18</div>
+    <div class="scroller">
+      <div class="age-option">16</div>
+      <div class="age-option">17</div>
+      <div class="age-option">18</div>
+      <div class="age-option">19</div>
+      <div class="age-option">20</div>
+      <!-- Add more age options as needed -->
+      <div class="age-option">60+</div>
+    </div>
+  </div>
+  
+  <script>
+
+const scroller = document.querySelector(".scroller");
+const selectedAge = document.querySelector(".selected-age");
+
+scroller.addEventListener("scroll", () => {
+  const scrollOffset = scroller.scrollLeft;
+  const options = document.querySelectorAll(".age-option");
+  let closestAge = options[0];
+  let minDistance = Math.abs(scrollOffset - closestAge.offsetLeft);
+  
+  options.forEach(option => {
+    const distance = Math.abs(scrollOffset - option.offsetLeft);
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestAge = option;
+    }
+  });
+
+  selectedAge.textContent = closestAge.textContent;
+});
+
+  </script>
+</body>
+</html>
