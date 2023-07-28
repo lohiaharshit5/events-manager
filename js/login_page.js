@@ -95,11 +95,21 @@ function codeverify() {
         console.log('mobile Api Data')
         mobile_otp(mobileApiData)
         .then(data => {
-          // Here you can use the data returned by the API response
-          console.log('API Response Data:', data);
-        });
+          const apiData = data;
+          console.log(apiData);
+          const userID = data.user_d;
+          mobileApiData.user_id = userID;
 
-        window.location.href = "https://events-manager-six.vercel.app/payment_gateway.html";
+          console.log(userID);
+          console.log('age=', age);
+          console.log('mobileAPIDATA=',mobileApiData);
+          const nextPageURL = "https://events-manager-six.vercel.app/payment_gateway.html" +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
+          console.log(nextPageURL);
+          window.location.href = nextPageURL;
+          // Here you can use the data returned by the API response
+        });
+        // console.log('out_of_loop-', userID);s
+        // window.location.href = "https://events-manager-six.vercel.app/payment_gateway.html";
 
     }).catch(function () {
         console.log('OTP Not correct');

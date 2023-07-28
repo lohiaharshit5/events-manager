@@ -1,8 +1,29 @@
+getDataFromURL();
+
 const urlParams = new URLSearchParams(window.location.search);
   const googleCode = urlParams.get('code');
   console.log(urlParams)
   console.log(googleCode)
   var modifiedGoogleCode = googleCode.replace(/^4\//, "");
+
+
+  function getDataFromURL() {
+    // Extract the query parameter from the URL
+    var urlParams = new URLSearchParams(window.location.search);
+    var responseDataJSON = urlParams.get('data');
+    console.log('started');
+  
+    // Parse the JSON string back into a JavaScript object
+    var responseData = JSON.parse(responseDataJSON);
+    console.log('responseData=',responseData);
+  
+    // Now you can use the responseData object to access the data from the previous page
+    console.log('discount =', responseData.discount);
+    console.log('gender =',responseData.gender);
+    console.log('quantity=',responseData.quantity);
+    console.log('final amount =',responseData.final_amount);
+    console.log('age= ', responseData.Age);
+  }
 
 
 // To get the google data from the google api
