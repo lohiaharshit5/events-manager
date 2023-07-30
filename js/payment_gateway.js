@@ -114,6 +114,8 @@ function googleAPIData(){
   });}
 
   console.log('outer loop', USERID);
+  console.log('outer loop user_id', USERID.user_id);
+
 
   // function anotherAPIFunction(google_data) {
   //   // Create the request body with the xxxxx variable
