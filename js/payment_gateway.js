@@ -9,7 +9,6 @@ try{
   console.error('An error occurred:', error.message);
 }
 
-post_api_google()
 
 try{
   getDataFromURL();
@@ -67,6 +66,7 @@ function googleAPIData(){
     console.log(data);
     const google_data= data;
     console.log('google_data -  ', google_data)
+
 // 
     fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
     method: 'POST',
@@ -79,6 +79,21 @@ function googleAPIData(){
   .then(response => response.json())
   .then(data => {
     console.log('Response:', data);
+    let currentURL = window.location.href;
+    let userId = data.user_id;
+    if (currentURL.includes('?')) {
+      // If a query string exists, append the user_id parameter using '&'
+      currentURL += `&user_id=${userId}`;
+    } else {
+      // If no query string exists, append the user_id parameter using '?'
+      currentURL += `?user_id=${userId}`;
+    }
+    
+    // Update the URL to navigate to the new URL with the added user_id parameter
+    window.location.href = currentURL;
+    console.log('current_url=',currentURL);
+    
+
     console.log('POST api working');
     console.log(requestBody);
   })
@@ -87,40 +102,40 @@ function googleAPIData(){
   });
 
 // 
-    anotherAPIFunction(google_data);
+    // anotherAPIFunction(google_data);
   })
   .catch(error => {
     // Handle any errors
     console.error('Error:', error);
-  });
+  });}
 
-  function anotherAPIFunction(google_data) {
-    // Create the request body with the xxxxx variable
-    var requestBody = {
-      data: google_data,
-      // Other properties as needed
-    };
-  }
+  // function anotherAPIFunction(google_data) {
+  //   // Create the request body with the xxxxx variable
+  //   var requestBody = {
+  //     data: google_data,
+  //     // Other properties as needed
+  //   };
+  // }
 
 // To post the data into the database.
-fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(google_data)
-})
-  .then(response => response.json())
-  .then(data => {
-    console.log('Response:', data);
-    console.log('POST api working');
-    console.log(requestBody);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-  }
+// fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
+//   method: 'POST',
+//   headers: {
+//     'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(google_data)
+// })
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log('Response:', data);
+//     console.log('POST api working');
+//     console.log(requestBody);
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
+//   }
 
 // Getting the user_id
   function user_id(){
