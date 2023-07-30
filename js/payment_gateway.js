@@ -48,7 +48,7 @@ const urlParams = new URLSearchParams(window.location.search);
 // To get the google data from the google api
 function googleAPIData(){
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
-  // axios.get(apiUrl).then(res=>console.log(res))
+  console.log('api_URL=', apiUrl);
   fetch(apiUrl, 
     {headers: {
     'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
