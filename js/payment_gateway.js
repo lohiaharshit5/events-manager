@@ -1,4 +1,4 @@
-
+let USERID = {}
 
 try{
   googleAPIData();
@@ -82,22 +82,24 @@ function googleAPIData(){
 
 
     console.log('POST api working', data.user_id);
-    let currentURL = window.location.href;
-    let userId = data.user_id;
-    if (currentURL.includes('?')) {
-      // If a query string exists, append the user_id parameter using '&'
-      currentURL += `&user_id=${userId}`;
-    } else {
-      // If no query string exists, append the user_id parameter using '?'
-      currentURL += `?user_id=${userId}`;
-    }
+    USERID.user_id = data.user_id;
+
+    // let currentURL = window.location.href;
+    // let userId = data.user_id;
+    // if (currentURL.includes('?')) {
+    //   // If a query string exists, append the user_id parameter using '&'
+    //   currentURL += `&user_id=${userId}`;
+    // } else {
+    //   // If no query string exists, append the user_id parameter using '?'
+    //   currentURL += `?user_id=${userId}`;
+    // }
     
-    // Update the URL to navigate to the new URL with the added user_id parameter
-    window.location.href = currentURL;
-    console.log('current_url=',currentURL);
+    // // Update the URL to navigate to the new URL with the added user_id parameter
+    // window.location.href = currentURL;
+    // console.log('current_url=',currentURL);
     
 
-    console.log(requestBody);
+    // console.log(requestBody);
   })
   .catch(error => {
     console.error('Error:', error);
@@ -110,6 +112,8 @@ function googleAPIData(){
     // Handle any errors
     console.error('Error:', error);
   });}
+
+  console.log('outer loop', USERID);
 
   // function anotherAPIFunction(google_data) {
   //   // Create the request body with the xxxxx variable
