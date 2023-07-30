@@ -79,19 +79,19 @@ function googleAPIData(){
   .then(response => response.json())
   .then(data => {
     console.log('Response:', data);
-    let currentURL = window.location.href;
-    let userId = data.user_id;
-    if (currentURL.includes('?')) {
-      // If a query string exists, append the user_id parameter using '&'
-      currentURL += `&user_id=${userId}`;
-    } else {
-      // If no query string exists, append the user_id parameter using '?'
-      currentURL += `?user_id=${userId}`;
-    }
+    // let currentURL = window.location.href;
+    // let userId = data.user_id;
+    // if (currentURL.includes('?')) {
+    //   // If a query string exists, append the user_id parameter using '&'
+    //   currentURL += `&user_id=${userId}`;
+    // } else {
+    //   // If no query string exists, append the user_id parameter using '?'
+    //   currentURL += `?user_id=${userId}`;
+    // }
     
-    // Update the URL to navigate to the new URL with the added user_id parameter
-    window.location.href = currentURL;
-    console.log('current_url=',currentURL);
+    // // Update the URL to navigate to the new URL with the added user_id parameter
+    // window.location.href = currentURL;
+    // console.log('current_url=',currentURL);
     
 
     console.log('POST api working');
