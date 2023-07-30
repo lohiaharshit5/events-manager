@@ -1,7 +1,7 @@
 
 
 try{
-  function googleAPIData()
+  function googleAPIData();
   throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
 } catch (error) {
   // This block will run if an error is thrown in the try block
@@ -10,7 +10,7 @@ try{
 }
 
 try{
-  function getDataFromURL()
+  function getDataFromURL();
   throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
 } catch (error) {
   // This block will run if an error is thrown in the try block
