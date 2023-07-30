@@ -9,6 +9,8 @@ try{
   console.error('An error occurred:', error.message);
 }
 
+post_api_google()
+
 try{
   getDataFromURL();
   throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
@@ -16,6 +18,8 @@ try{
   // This block will run if an error is thrown in the try block
   // The `error` variable will hold the error object with information about the error
   console.error('An error occurred:', error.message);}
+
+
 
 
 
@@ -61,8 +65,28 @@ function googleAPIData(){
   .then(data => {
     // Process the response data
     console.log(data);
-    google_data= data;
+    const google_data= data;
     console.log('google_data -  ', google_data)
+// 
+    fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(google_data)
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log('Response:', data);
+    console.log('POST api working');
+    console.log(requestBody);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+// 
     anotherAPIFunction(google_data);
   })
   .catch(error => {
@@ -79,8 +103,7 @@ function googleAPIData(){
   }
 
 // To post the data into the database.
-
-  fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
+fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
   method: 'POST',
   headers: {
     'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
