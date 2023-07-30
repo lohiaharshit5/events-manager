@@ -79,6 +79,9 @@ function googleAPIData(){
   .then(response => response.json())
   .then(data => {
     console.log('Response:', data);
+
+
+    console.log('POST api working', data.user_id);
     // let currentURL = window.location.href;
     // let userId = data.user_id;
     // if (currentURL.includes('?')) {
@@ -94,8 +97,7 @@ function googleAPIData(){
     // console.log('current_url=',currentURL);
     
 
-    console.log('POST api working');
-    console.log(requestBody);
+    // console.log(requestBody);
   })
   .catch(error => {
     console.error('Error:', error);
