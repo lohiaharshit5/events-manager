@@ -18,11 +18,6 @@ try{
   console.error('An error occurred:', error.message);}
 
 
-const urlParams = new URLSearchParams(window.location.search);
-  const googleCode = urlParams.get('code');
-  console.log(urlParams)
-  console.log(googleCode)
-  var modifiedGoogleCode = googleCode.replace(/^4\//, "");
 
 // for OTP flow :- 
 
@@ -47,6 +42,12 @@ const urlParams = new URLSearchParams(window.location.search);
 
 // To get the google data from the google api
 function googleAPIData(){
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const googleCode = urlParams.get('code');
+  console.log(urlParams)
+  console.log(googleCode)
+  var modifiedGoogleCode = googleCode.replace(/^4\//, "");
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
   console.log('api_URL=', apiUrl);
   fetch(apiUrl, 
