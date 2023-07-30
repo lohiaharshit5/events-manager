@@ -51,7 +51,8 @@ function googleAPIData(){
   // axios.get(apiUrl).then(res=>console.log(res))
   fetch(apiUrl, 
     {headers: {
-    "Content-Type": "application/json",
+    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+    "Content-Type": "application/json"
     // 'Content-Type': 'application/x-www-form-urlencoded',
   }}
 )
