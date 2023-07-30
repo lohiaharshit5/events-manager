@@ -154,7 +154,7 @@ body{
 .benefits-icon-cont{
     border-radius: 50%;
     background: rgb(247, 242, 202);
-    width: 40px;
+    width: 39px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,12 +204,12 @@ body{
 
 .food-icon {
     height: 20px;
-
+    padding-right: 5px;
     fill: grey;
 }
 .swaps-icon {
     height: 20px;
-
+    padding-right: 5px;
     fill: grey;
 }
 .grey-included ul{
@@ -226,11 +226,32 @@ body{
     margin: -1px 0;
     stroke: grey;
 }
+.gift-icon-ct{
+    padding-right: 5px;
+
+    display: flex;
+}
+
+.gift-line-cont{
+    display: flex;
+
+}
+
 .dance-icon{
     height: 25px;
     margin: -2px 0px;
-    padding: 0px 2px;
+    /* padding: 0px 2px; */
+    padding-right: 5px;
     fill: grey;
+}
+
+.dance-icon-cont{
+    display: flex;
+    padding-right: 5px;
+}
+
+.dance-item-line{
+    display: flex;
 }
 
 .calendar-icon {
@@ -695,13 +716,16 @@ align-items: center;}
 
     height: 300px;
     overflow-x: scroll;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 10px; */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* background-color: #f9f9f9; */
+    background-color: rgb(234, 227, 227);
     padding: 10px;
     display: flex;
     overflow-x: auto;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
 }
 
 
@@ -805,6 +829,10 @@ padding: 2px 15px;}
     transform: rotate(180deg);
 }
 
+.upper-container-reviews{
+    box-shadow:3px 0 2px rgba(0, 0, 0, 0.2), 2px 0 2px rgba(0, 0, 0, 0.2), 0 3px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
 
 .height-maker{
     display: flex;
@@ -813,6 +841,7 @@ padding: 2px 15px;}
     background: white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    
 }
 
 .hhhhh {

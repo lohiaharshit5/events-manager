@@ -1,4 +1,22 @@
-getDataFromURL();
+
+
+try{
+  function googleAPIData()
+  throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
+} catch (error) {
+  // This block will run if an error is thrown in the try block
+  // The `error` variable will hold the error object with information about the error
+  console.error('An error occurred:', error.message);
+}
+
+try{
+  function getDataFromURL()
+  throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
+} catch (error) {
+  // This block will run if an error is thrown in the try block
+  // The `error` variable will hold the error object with information about the error
+  console.error('An error occurred:', error.message);}
+
 
 const urlParams = new URLSearchParams(window.location.search);
   const googleCode = urlParams.get('code');
@@ -6,6 +24,7 @@ const urlParams = new URLSearchParams(window.location.search);
   console.log(googleCode)
   var modifiedGoogleCode = googleCode.replace(/^4\//, "");
 
+// for OTP flow :- 
 
   function getDataFromURL() {
     // Extract the query parameter from the URL
@@ -27,6 +46,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 
 // To get the google data from the google api
+function googleAPIData(){
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
   // axios.get(apiUrl).then(res=>console.log(res))
   fetch(apiUrl, 
@@ -54,6 +74,7 @@ const urlParams = new URLSearchParams(window.location.search);
       data: google_data,
       // Other properties as needed
     };
+  }
 
 // To post the data into the database.
 
