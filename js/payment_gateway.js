@@ -1,4 +1,4 @@
-let USERID = {}
+
 
 try{
   googleAPIData();
@@ -18,19 +18,31 @@ try{
   // The `error` variable will hold the error object with information about the error
   console.error('An error occurred:', error.message);}
 
-  getDATA();
+  try{
+    getDATA();
+    throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
+  } catch (error) {
+    // This block will run if an error is thrown in the try block
+    // The `error` variable will hold the error object with information about the error
+    console.error('An error occurred:', error.message);}
+
+
   function getDATA(){
     const user_id = localStorage.getItem("user_id");
     console.log('in data');
   // Do something with the user_id
     console.log("User ID:", user_id);
-    const userDataString = localStorage.getItem("user_data");
-  
-  // Parse the JSON string back to an object
-    const userData = JSON.parse(userDataString);
-  
-  // Now you can access the properties of the JSON object
-    console.log("user_data:", userData);
+
+    const discount =localStorage.getItem("discount" );
+    console.log('starting');
+    console.log(discount);
+    const gender =localStorage.getItem("gender" );
+    const quantity =localStorage.getItem('quantity' );
+    const final_amount=localStorage.getItem('final_amount');
+    const Age=localStorage.getItem('Age' );
+    console.log("item from storage", Age);
+    console.log("item from storage", gender);
+
     // console.log("Name:", userData.name);
     // console.log("Email:", userData.email);
   
@@ -55,7 +67,7 @@ try{
     console.log('gender =',responseData.gender);
     console.log('quantity=',responseData.quantity);
     console.log('final amount =',responseData.final_amount);
-    console.log('age= ', responseData.Age);
+    console.log('age= ', responseData.age);
   }
 
 
@@ -129,9 +141,6 @@ function googleAPIData(){
     // Handle any errors
     console.error('Error:', error);
   });}
-
-  console.log('outer loop', USERID);
-  console.log('outer loop user_id', USERID.user_id);
 
 
   // function anotherAPIFunction(google_data) {

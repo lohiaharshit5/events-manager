@@ -230,11 +230,18 @@ function passDataAndRedirect(){
     'final_amount':extractIntegersFromString(finalAmount.textContent),
     'Age':age.innerText
   }
+  localStorage.setItem('discount',extractIntegersFromString(Discount.textContent) );
+  localStorage.setItem('gender',Gender.innerText );
+  localStorage.setItem('quantity',quantity.innerText );
+  localStorage.setItem('final_amount',extractIntegersFromString(finalAmount.textContent));
+  localStorage.setItem('Age',age.innerText );
+  console.log('local storage done');
+
   console.log(response);
   if(quantity.innerText!= ' Add Passes' && Gender.innerText!= ' Gender' && parseInt(age.innerText)>=18 && parseInt(extractIntegersFromString(finalAmount.innerText))>0){
     var responseJSON = JSON.stringify(response);
     var nextPageURL = 'login_page.html'+"?data=" + encodeURIComponent(responseJSON)
-    localStorage.setItem("user_data", JSON.stringify(response));
+
 
     window.location.href = nextPageURL
 

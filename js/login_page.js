@@ -9,30 +9,37 @@ function getDataFromURL() {
   var responseData = JSON.parse(responseDataJSON);
 
   // Now you can use the responseData object to access the data from the previous page
+  console.log(responseData);
   console.log('discount =', responseData.discount);
   console.log('gender =',responseData.gender);
   console.log('quantity=',responseData.quantity);
   console.log('final amount =',responseData.final_amount);
   console.log('age= ', responseData.Age);
-  localStorage.setItem("user_data", JSON.stringify(responseData));
+  localStorage.setItem('discount',responseData.discount );
+  localStorage.setItem('gender',responseData.gender );
+  localStorage.setItem('quantity',responseData.quantity );
+  localStorage.setItem('final_amount',responseData.final_amount);
+  localStorage.setItem('Age',responseData.Age );
+  console.log('local storage done');
 }
 
 
 
-getDATA();
-function getDATA(){
-  const userDataString = localStorage.getItem("user_data");
-
-// Parse the JSON string back to an object
-  const userData = JSON.parse(userDataString);
-
-// Now you can access the properties of the JSON object
-  console.log("user_data:", userData);
-  // console.log("Name:", userData.name);
-  // console.log("Email:", userData.email);
+// getDATA();
+// function getDATA(){
+//   const userDataString = localStorage.getItem("quantity");
 
 
-}
+// // Parse the JSON string back to an object
+//   const userData = JSON.parse(userDataString);
+
+// // Now you can access the properties of the JSON object
+//   console.log("user_data_quantity:", userDataString);
+//   // console.log("Name:", userData.name);
+//   // console.log("Email:", userData.email);
+
+
+// }
 // Call the function to get the data when the page loads
 getDataFromURL();
 
