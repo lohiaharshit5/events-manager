@@ -28,7 +28,7 @@ try{
 
 
   function getDATA(){
-    const user_id = localStorage.getItem("user_id");
+    // const user_id = localStorage.getItem("user_id");
     console.log('in data');
   // Do something with the user_id
     console.log("User ID:", user_id);
@@ -93,6 +93,15 @@ function googleAPIData(){
     // Process the response data
     console.log(data);
     const google_data= data;
+    const gender =localStorage.getItem('gender');
+    const quantity =localStorage.getItem('quantity' );
+    const final_amount=localStorage.getItem('final_amount');
+    const Age=localStorage.getItem('Age' );
+    google_data.Age = Age;
+    google_data.final_amount = final_amount;
+    google_data.gender = gender;
+    google_data.quantity = quantity;
+
     console.log('google_data -  ', google_data)
 
 // 
@@ -110,6 +119,20 @@ function googleAPIData(){
 
 
     console.log('POST api working', data.user_id);
+    localStorage.setItem("google_user_id", data.user_id);
+    console.log('in data');
+  // Do something with the user_id
+    console.log("User ID:", data.user_id);
+
+    const discount =localStorage.getItem("discount" );
+    console.log('starting');
+    console.log(discount);
+    const gender =localStorage.getItem('gender');
+    const quantity =localStorage.getItem('quantity' );
+    const final_amount=localStorage.getItem('final_amount');
+    const Age=localStorage.getItem('Age' );
+    console.log("item from storage", Age);
+    console.log("item from storage", gender);
     // localStorage.setItem("user_id",data.user_id);
     console.log('user_id added in the local storage');
 
