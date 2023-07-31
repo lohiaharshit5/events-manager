@@ -82,7 +82,8 @@ function googleAPIData(){
 
 
     console.log('POST api working', data.user_id);
-    USERID.user_id = data.user_id;
+    localStorage.setItem("user_id",data.user_id);
+    console.log('user_id added in the local storage');
 
     // let currentURL = window.location.href;
     // let userId = data.user_id;
