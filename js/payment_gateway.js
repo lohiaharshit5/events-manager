@@ -18,8 +18,24 @@ try{
   // The `error` variable will hold the error object with information about the error
   console.error('An error occurred:', error.message);}
 
-
-
+  getDATA();
+  function getDATA(){
+    const user_id = localStorage.getItem("user_id");
+    console.log('in data');
+  // Do something with the user_id
+    console.log("User ID:", user_id);
+    const userDataString = localStorage.getItem("user_data");
+  
+  // Parse the JSON string back to an object
+    const userData = JSON.parse(userDataString);
+  
+  // Now you can access the properties of the JSON object
+    console.log("user_data:", userData);
+    // console.log("Name:", userData.name);
+    // console.log("Email:", userData.email);
+  
+  
+  }
 
 
 // for OTP flow :- 
