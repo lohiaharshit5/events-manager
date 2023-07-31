@@ -1,27 +1,27 @@
 // Get Data from the URL string
 // Assuming this code is on the next_page.html
-function getDataFromURL() {
-  // Extract the query parameter from the URL
-  var urlParams = new URLSearchParams(window.location.search);
-  var responseDataJSON = urlParams.get('data');
+// function getDataFromURL() {
+//   // Extract the query parameter from the URL
+//   var urlParams = new URLSearchParams(window.location.search);
+//   var responseDataJSON = urlParams.get('data');
 
-  // Parse the JSON string back into a JavaScript object
-  var responseData = JSON.parse(responseDataJSON);
+//   // Parse the JSON string back into a JavaScript object
+//   var responseData = JSON.parse(responseDataJSON);
 
-  // Now you can use the responseData object to access the data from the previous page
-  console.log(responseData);
-  console.log('discount =', responseData.discount);
-  console.log('gender =',responseData.gender);
-  console.log('quantity=',responseData.quantity);
-  console.log('final amount =',responseData.final_amount);
-  console.log('age= ', responseData.Age);
-  localStorage.setItem('discount',responseData.discount );
-  localStorage.setItem('gender',responseData.gender );
-  localStorage.setItem('quantity',responseData.quantity );
-  localStorage.setItem('final_amount',responseData.final_amount);
-  localStorage.setItem('Age',responseData.Age );
-  console.log('local storage done');
-}
+//   // Now you can use the responseData object to access the data from the previous page
+//   console.log(responseData);
+//   console.log('discount =', responseData.discount);
+//   console.log('gender =',responseData.gender);
+//   console.log('quantity=',responseData.quantity);
+//   console.log('final amount =',responseData.final_amount);
+//   console.log('age= ', responseData.Age);
+//   localStorage.setItem('discount',responseData.discount );
+//   localStorage.setItem('gender',responseData.gender );
+//   localStorage.setItem('quantity',responseData.quantity );
+//   localStorage.setItem('final_amount',responseData.final_amount);
+//   localStorage.setItem('Age',responseData.Age );
+//   console.log('local storage done');
+// }
 
 
 
@@ -41,7 +41,7 @@ function getDataFromURL() {
 
 // }
 // Call the function to get the data when the page loads
-getDataFromURL();
+// getDataFromURL();
 
 
 
@@ -124,9 +124,32 @@ function codeverify() {
           const userID = data.user_d;
           mobileApiData.user_id = userID;
 
+
+          var urlParams = new URLSearchParams(window.location.search);
+          var responseDataJSON = urlParams.get('data');
+        
+          // Parse the JSON string back into a JavaScript object
+          var responseData = JSON.parse(responseDataJSON);
+        
+          // Now you can use the responseData object to access the data from the previous page
+          console.log(responseData);
+          console.log('discount =', responseData.discount);
+          console.log('gender =',responseData.gender);
+          console.log('quantity=',responseData.quantity);
+          console.log('final amount =',responseData.final_amount);
+          console.log('age= ', responseData.Age);
+          localStorage.setItem('discount',responseData.discount );
+          localStorage.setItem('gender',responseData.gender );
+          localStorage.setItem('quantity',responseData.quantity );
+          localStorage.setItem('final_amount',responseData.final_amount);
+          localStorage.setItem('Age',responseData.Age );
+          console.log('local storage done');
+
           console.log(userID);
           console.log('age=', age);
           console.log('mobileAPIDATA=',mobileApiData);
+          const gen = localStorage.getItem('gender');
+          console.log(gen);
           const nextPageURL = "https://events-manager-six.vercel.app/payment_gateway.html" +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
           console.log(nextPageURL);
           window.location.href = nextPageURL;

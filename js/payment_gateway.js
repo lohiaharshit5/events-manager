@@ -18,7 +18,7 @@ try{
   // The `error` variable will hold the error object with information about the error
   console.error('An error occurred:', error.message);}
 
-  try{
+try{
     getDATA();
     throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
   } catch (error) {
@@ -36,7 +36,7 @@ try{
     const discount =localStorage.getItem("discount" );
     console.log('starting');
     console.log(discount);
-    const gender =localStorage.getItem("gender" );
+    const gender =localStorage.getItem('gender');
     const quantity =localStorage.getItem('quantity' );
     const final_amount=localStorage.getItem('final_amount');
     const Age=localStorage.getItem('Age' );
@@ -110,7 +110,7 @@ function googleAPIData(){
 
 
     console.log('POST api working', data.user_id);
-    localStorage.setItem("user_id",data.user_id);
+    // localStorage.setItem("user_id",data.user_id);
     console.log('user_id added in the local storage');
 
     // let currentURL = window.location.href;
