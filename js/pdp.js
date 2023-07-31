@@ -234,6 +234,7 @@ function passDataAndRedirect(){
   if(quantity.innerText!= ' Add Passes' && Gender.innerText!= ' Gender' && parseInt(age.innerText)>=18 && parseInt(extractIntegersFromString(finalAmount.innerText))>0){
     var responseJSON = JSON.stringify(response);
     var nextPageURL = 'login_page.html'+"?data=" + encodeURIComponent(responseJSON)
+    localStorage.setItem("user_data", JSON.stringify(response));
 
     window.location.href = nextPageURL
 
