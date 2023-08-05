@@ -31,7 +31,7 @@ function getDATA(){
 
     const postData = {
     // Your data to be sent in the request body
-        "user_id":mobile_user_id
+        "user_id":parseInt(mobile_user_id)
 };
 console.log(postData);
 const requestOptions = {
