@@ -11,6 +11,16 @@ body{
 
 }
 
+.order-icon{
+  height: 40px;
+
+}
+
+.order-icon-cont{
+  display: flex;
+  align-items: center;
+}
+
 .order-container {
   display: flex;
   justify-content: center;
@@ -20,12 +30,15 @@ body{
 }
 
 .order-card {
-  background-color:#000000a5;
+  background-color: #000000a5;
   width: 90%;
-  margin-top: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 80px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
+
 }
 
 .order-header {
@@ -136,14 +149,11 @@ body{
 }
 
 .top-navigation {
-
-
   color: white;
   display: flex;
-  margin-top: -8px;
-
+  /* margin-top: -8px; */
   align-items: center;
-  padding: 12px;
+  padding: 8px 10px;
 }
 
 .back-arrow {
