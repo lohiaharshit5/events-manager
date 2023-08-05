@@ -188,29 +188,29 @@ function googleAPIData(){
 
 
 // Getting the user_id
-  function user_id(){
-    console.log("function started")
-  const url = 'https://mysite-ten-psi.vercel.app/user_id/';
-  const data = {
-  "email_id": 'harshit@goldsetu.co',
-  "amount": 100,
-};
+//   function user_id(){
+//     console.log("function started")
+//   const url = 'https://mysite-ten-psi.vercel.app/user_id/';
+//   const data = {
+//   "email_id": 'harshit@goldsetu.co',
+//   "amount": 100,
+// };
 
-  const requestOptions = {
-  method: 'POST',
-  headers: {
-    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-};
+//   const requestOptions = {
+//   method: 'POST',
+//   headers: {
+//     'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify(data),
+// };
 
-fetch(url, requestOptions)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+// fetch(url, requestOptions)
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(error => console.error('Error:', error));
 
-  }
+//   }
 
   // axios
 

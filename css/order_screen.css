@@ -22,16 +22,16 @@ body{
 }
 
 .order-container {
-  display: flex;
+
   justify-content: center;
   align-items: center;
 
 
 }
 
-.order-card {
+.order-card:first-child {
   background-color: #000000a5;
-  width: 90%;
+  width: 85%;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 80px;
@@ -39,6 +39,17 @@ body{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
 
+}
+
+.order-card:not(:first-child) {
+  background-color: #000000a5;
+  width: 85%;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .order-header {
@@ -140,7 +151,7 @@ body{
 }
 
 .top-container{
-  display: fixed;
+  top:0;
   background: #00000059;
   position: fixed;
   width: 100%;
@@ -172,7 +183,7 @@ body{
 
 @media only screen and (min-width:710px){
   body{
-    height: 100vh;background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back2.jpg') no-repeat;
+    background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back2.jpg') no-repeat;
     background-size: cover;}
 
     .pass-dnld{
