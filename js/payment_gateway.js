@@ -45,8 +45,9 @@ try{
 
     // Get the user_id
     const userIdMobile = dataObject.user_id;
-    
+
     console.log('mobile_user_id:',userIdMobile);
+    localStorage.setItem("mobile_user_id",userIdMobile );
 
     const keys = Object.keys(localStorage);
 
