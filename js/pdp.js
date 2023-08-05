@@ -11,7 +11,7 @@
 // console.log('ee',left);
 
 
-console.log(localStorage.getItem("user_id"));
+// console.log(localStorage.getItem("user_id"));
 
 
 passes_left()
