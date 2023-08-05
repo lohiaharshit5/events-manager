@@ -24,6 +24,10 @@ body{
 
 } */
 
+.heart-img{
+    width: 40px;
+}
+
 .my-slides img{
 
     vertical-align: middle;
@@ -721,7 +725,8 @@ align-items: center;}
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     /* background-color: #f9f9f9; */
-    background-color: rgb(234, 227, 227);
+    /* background-color: rgb(234, 227, 227); */
+    /* border:1px solid red; */
     padding: 10px;
     display: flex;
     overflow-x: auto;
@@ -836,7 +841,8 @@ padding: 2px 15px;}
 
 .height-maker{
     display: flex;
-    padding: 20px;
+    padding-top: 20px;
+    /* padding-bottom: 10px; */
     justify-content: center;
     background: white;
     border-top-left-radius: 10px;
@@ -844,10 +850,10 @@ padding: 2px 15px;}
     
 }
 
-.hhhhh {
+/* .hhhhh {
     height: 20px;
     width: 4px;
-    background: red;}
+    background: red;} */
 
 
 .review-header {

@@ -13,18 +13,17 @@
         <a href="javascript:history.back()" class="back-arrow">&larr;</a>
         <h1 class="page-title">Passes History</h1>
 </div></div>
+
+
     <div class="order-container">
         <div class="order-card">
-          <!-- <div class="order-header">
-            <a href="#" class="back-arrow">&larr;</a>
-            <h2 class="order-title">Order Details</h2>
-          </div> -->
+
           <div class="product-details">
             <div class="product-image">
               <img src="https://storage.googleapis.com/youthstring.appspot.com/img/pexels-andres-ayrton-6578960.jpg" alt="Product" />
             </div>
             <div class="product-name">
-              <span>Blind Date Passes</span>
+              <span>{event_name}</span>   <!--Blind Date Passes -->
             </div>
           </div>
           <div class="order-content">
@@ -33,23 +32,23 @@
                 
                 <div class="order-creation-time">
                   <span>Order Id:</span>
-                  <span>20230709122122</span>
+                  <span>{order_id}</span>
                 </div>
                 <div class="order-amount">
                   <span>Amount:</span>
-                  <span>Rs 999</span>
+                  <span>Rs {amount}</span>
                 </div>
                 <div class="order-venue">
                   <span>Venue:</span>
-                  <span>Cantino Restaurant</span>
+                  <span>{venue}</span> <!-- Cantino Restaurant -->
                 </div>
                 <div class="order-date">
                   <span>Event Date:</span>
-                  <span>July 10, 2023</span>
+                  <span>{event_date}</span> <!--July 10, 2023 -->
                 </div>
                 <div class="order-date">
                     <span>Event Time:</span>
-                    <span>12:30PM</span>
+                    <span>{event_time}</span>   <!--12:30PM -->
                   </div>
               </div>
 

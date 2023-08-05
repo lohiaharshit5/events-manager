@@ -10,6 +10,10 @@
 // const left = passes_left()
 // console.log('ee',left);
 
+
+console.log(localStorage.getItem("user_id"));
+
+
 passes_left()
   .then(data => {
     // Here you can use the data returned by the API response
@@ -174,7 +178,7 @@ plusButtonAge.addEventListener("click", ()=>{
 })
 minusButtonAge.addEventListener("click", ()=>{
   console.log('minus worked');
-  if(parseInt(mainAge.innerText)>17){
+  if(parseInt(mainAge.innerText)<19){
     console.log('in if condition')
   plusButtonAge.style.display = 'none';
   minusButtonAge.style.display = 'none';

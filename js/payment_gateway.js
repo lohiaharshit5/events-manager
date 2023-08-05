@@ -31,6 +31,7 @@ try{
     // const user_id = localStorage.getItem("user_id");
     console.log('in data');
   // Do something with the user_id
+    const user_id = localStorage.getItem("user_id");
     console.log("User ID:", user_id);
 
     const discount =localStorage.getItem("discount" );
@@ -52,23 +53,23 @@ try{
 
 // for OTP flow :- 
 
-  function getDataFromURL() {
-    // Extract the query parameter from the URL
-    var urlParams = new URLSearchParams(window.location.search);
-    var responseDataJSON = urlParams.get('data');
-    console.log('started');
+  // function getDataFromURL() {
+  //   // Extract the query parameter from the URL
+  //   var urlParams = new URLSearchParams(window.location.search);
+  //   var responseDataJSON = urlParams.get('data');
+  //   console.log('started');
   
-    // Parse the JSON string back into a JavaScript object
-    var responseData = JSON.parse(responseDataJSON);
-    console.log('responseData=',responseData);
+  //   // Parse the JSON string back into a JavaScript object
+  //   var responseData = JSON.parse(responseDataJSON);
+  //   console.log('responseData=',responseData);
   
-    // Now you can use the responseData object to access the data from the previous page
-    console.log('discount =', responseData.discount);
-    console.log('gender =',responseData.gender);
-    console.log('quantity=',responseData.quantity);
-    console.log('final amount =',responseData.final_amount);
-    console.log('age= ', responseData.age);
-  }
+  //   // Now you can use the responseData object to access the data from the previous page
+  //   console.log('discount =', responseData.discount);
+  //   console.log('gender =',responseData.gender);
+  //   console.log('quantity=',responseData.quantity);
+  //   console.log('final amount =',responseData.final_amount);
+  //   console.log('age= ', responseData.age);
+  // }
 
 
 // To get the google data from the google api

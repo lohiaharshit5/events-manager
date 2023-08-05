@@ -120,7 +120,7 @@ function codeverify() {
         mobile_otp(mobileApiData)
         .then(data => {
           const apiData = data;
-          console.log(apiData);
+          console.log("API DATa = ",apiData);
           const userID = data.user_d;
           mobileApiData.user_id = userID;
 
@@ -143,14 +143,17 @@ function codeverify() {
           localStorage.setItem('quantity',responseData.quantity );
           localStorage.setItem('final_amount',responseData.final_amount);
           localStorage.setItem('Age',responseData.Age );
+          localStorage.setItem('user_id',userID );
           console.log('local storage done');
 
-          console.log(userID);
+          console.log("userId:", userID);
           console.log('age=', age);
           console.log('mobileAPIDATA=',mobileApiData);
           const gen = localStorage.getItem('gender');
           console.log(gen);
-          const nextPageURL = "https://events-manager-six.vercel.app/payment_gateway.html" +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
+          const nextPageURL = "https://events-manager-six.vercel.app/payment_gateway.html" 
+          
+          // +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
           console.log(nextPageURL);
           window.location.href = nextPageURL;
           // Here you can use the data returned by the API response
