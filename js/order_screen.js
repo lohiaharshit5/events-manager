@@ -52,6 +52,8 @@ fetch(apiUrl, requestOptions)
     })
     .then(data => {
         console.log('Response data:', data);
+        card_maker(data);
+        console.log("card maker worked")
         // Handle the response data here
     })
     .catch(error => {
