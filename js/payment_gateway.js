@@ -91,8 +91,8 @@ function googleAPIData(){
 
   const urlParams = new URLSearchParams(window.location.search);
   const googleCode = urlParams.get('code');
-  console.log(urlParams)
-  console.log(googleCode)
+  console.log(urlParams);
+  console.log("googlecde:",googleCode);
   var modifiedGoogleCode = googleCode.replace(/^4\//, "");
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
   console.log('api_URL=', apiUrl);
@@ -151,22 +151,6 @@ function googleAPIData(){
     // localStorage.setItem("user_id",data.user_id);
     console.log('user_id added in the local storage');
 
-    // let currentURL = window.location.href;
-    // let userId = data.user_id;
-    // if (currentURL.includes('?')) {
-    //   // If a query string exists, append the user_id parameter using '&'
-    //   currentURL += `&user_id=${userId}`;
-    // } else {
-    //   // If no query string exists, append the user_id parameter using '?'
-    //   currentURL += `?user_id=${userId}`;
-    // }
-    
-    // // Update the URL to navigate to the new URL with the added user_id parameter
-    // window.location.href = currentURL;
-    // console.log('current_url=',currentURL);
-    
-
-    // console.log(requestBody);
   })
   .catch(error => {
     console.error('Error:', error);
@@ -181,33 +165,6 @@ function googleAPIData(){
   });}
 
 
-  // function anotherAPIFunction(google_data) {
-  //   // Create the request body with the xxxxx variable
-  //   var requestBody = {
-  //     data: google_data,
-  //     // Other properties as needed
-  //   };
-  // }
-
-// To post the data into the database.
-// fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
-//   method: 'POST',
-//   headers: {
-//     'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify(google_data)
-// })
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log('Response:', data);
-//     console.log('POST api working');
-//     console.log(requestBody);
-//   })
-//   .catch(error => {
-//     console.error('Error:', error);
-//   });
-//   }
 
 // Getting the user_id
   function user_id(){
