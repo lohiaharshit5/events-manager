@@ -39,7 +39,13 @@ try{
   function getDATA(){
     // const user_id = localStorage.getItem("user_id");
     console.log('in data');
-    const userIdMobile = urlParams.get('user_id');
+    const dataParam = urlParams.get('data');
+
+    const dataObject = JSON.parse(decodeURIComponent(dataParam));
+
+    // Get the user_id
+    const userIdMobile = dataObject.user_id;
+    
     console.log('mobile_user_id:',userIdMobile);
 
     const keys = Object.keys(localStorage);
