@@ -93,6 +93,8 @@ function googleAPIData(){
   const googleCode = urlParams.get('code');
   console.log(urlParams);
   console.log("googlecde:",googleCode);
+  if (googleCode!=null){
+    console.log("in google code");
   var modifiedGoogleCode = googleCode.replace(/^4\//, "");
   var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin/' + String(modifiedGoogleCode);
   console.log('api_URL=', apiUrl);
@@ -162,7 +164,8 @@ function googleAPIData(){
   .catch(error => {
     // Handle any errors
     console.error('Error:', error);
-  });}
+  });
+}}
 
 
 
