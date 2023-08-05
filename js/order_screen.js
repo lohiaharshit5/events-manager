@@ -33,7 +33,7 @@ function getDATA(){
     // Your data to be sent in the request body
         "user_id":mobile_user_id
 };
-
+console.log(postData);
 const requestOptions = {
     method: 'POST',
     headers: {
