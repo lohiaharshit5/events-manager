@@ -1,7 +1,16 @@
-
+const urlParams = new URLSearchParams(window.location.search);
 
 try{
-  googleAPIData();
+  
+  const googleCode = urlParams.get('code');
+  console.log('google_code:', googleCode);
+  if (googleCode!=null){
+  console.log('in if');
+  googleAPIData();}
+  else {
+    getDATA();
+    console.log('in else');
+  }
   throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
 } catch (error) {
   // This block will run if an error is thrown in the try block
@@ -30,6 +39,8 @@ try{
   function getDATA(){
     // const user_id = localStorage.getItem("user_id");
     console.log('in data');
+    const userIdMobile = urlParams.get('user_id');
+    console.log('mobile_user_id:',userIdMobile);
 
     const keys = Object.keys(localStorage);
 
