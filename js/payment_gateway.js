@@ -10,13 +10,13 @@ try{
 }
 
 
-try{
-  getDataFromURL();
-  throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
-} catch (error) {
-  // This block will run if an error is thrown in the try block
-  // The `error` variable will hold the error object with information about the error
-  console.error('An error occurred:', error.message);}
+// try{
+//   getDataFromURL();
+//   throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
+// } catch (error) {
+//   // This block will run if an error is thrown in the try block
+//   // The `error` variable will hold the error object with information about the error
+//   console.error('An error occurred:', error.message);}
 
 try{
     getDATA();
@@ -30,6 +30,20 @@ try{
   function getDATA(){
     // const user_id = localStorage.getItem("user_id");
     console.log('in data');
+
+    const keys = Object.keys(localStorage);
+
+// Create an object to store key-value pairs
+    const allVariables = {};
+
+    // Iterate through keys and retrieve values
+    keys.forEach(key => {
+      allVariables[key] = localStorage.getItem(key);
+    });
+
+    // Now, 'allVariables' object contains all variables from local storage
+    console.log("local all :",allVariables);
+
   // Do something with the user_id
     const user_id = localStorage.getItem("user_id");
     console.log("User ID:", user_id);
