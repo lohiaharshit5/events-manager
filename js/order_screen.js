@@ -61,12 +61,44 @@ fetch(apiUrl, requestOptions)
         // Handle errors here
     });
 
-
-
-
-
   }
-  else{
+
+
+  else if (google_user_id!=null){
+
+    const apiUrl = 'https://mysite-ten-psi.vercel.app/user_order_count/'; // Replace with your API URL
+
+    const postData = {
+    // Your data to be sent in the request body
+        "user_id":parseInt(google_user_id)
+};
+console.log(postData);
+const requestOptions = {
+    method: 'POST',
+    headers: {
+        'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(postData),
+};
+
+fetch(apiUrl, requestOptions)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response data:', data);
+        card_maker(data);
+        console.log("card maker worked")
+        // Handle the response data here
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+        // Handle errors here
+    });
 
   }
 

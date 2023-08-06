@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
 
 body{
-  height: 100vh;background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back3.jpg') no-repeat;
+  background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back3.jpg') no-repeat;
   background-size: cover;
   margin: 0;
 
@@ -27,6 +27,11 @@ body{
   align-items: center;
 
 
+}
+
+.overall-card-container{
+  display: flex;
+  justify-content: center;
 }
 
 .order-card:first-child {
