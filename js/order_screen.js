@@ -137,13 +137,17 @@ cardData.data.forEach(order => {
                       <span>Amount:</span>
                       <span>Rs ${order.final_amount}</span>
                   </div>
+                  <div class="discount">
+                  <span>Discount:</span>
+                  <span>${order.discount}</span>
+              </div>
                   <div class="order-venue">
                       <span>Venue:</span>
                       <span>${order.venue}</span>
                   </div>
                   <div class="order-date">
                       <span>Event Date:</span>
-                      <span>${order.event_date}</span>
+                      <span>${order.date}</span>
                   </div>
                   <div class="order-date">
                       <span>Event Time:</span>
