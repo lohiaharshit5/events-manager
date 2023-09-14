@@ -152,7 +152,7 @@ function codeverify() {
           console.log('mobileAPIDATA=',mobileApiData);
           const gen = localStorage.getItem('gender');
           console.log(gen);
-          const nextPageURL = "https://events-manager-six.vercel.app/payment_gateway.html" +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
+          const nextPageURL = "payment_gateway.html" +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
           window.location.href = nextPageURL;
           // Here you can use the data returned by the API response
         });

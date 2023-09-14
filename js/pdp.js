@@ -205,13 +205,13 @@ function selectGender(gender) {
   if(gender=='Male'){
     genderButton.innerHTML = `<i class="fas fa-mars"></i> Male`
     genderButton.style.color = 'white'
-    genderButton.style.background = 'red'
+    genderButton.style.background = '#f06'
     genderButton.style.fontWeight='bold'
   }
   else{
     genderButton.innerHTML = `<i class="fas fa-venus"></i> Female`
     genderButton.style.color = 'white'
-    genderButton.style.background = 'red'
+    genderButton.style.background = '#f06'
     genderButton.style.fontWeight='bold'
   }
   toggleDropdown(); // Hide the dropdown after selecting an option

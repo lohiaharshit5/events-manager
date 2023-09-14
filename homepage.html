@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youthstring homepage</title>
+    <link rel="icon" href="https://storage.googleapis.com/youthstring.appspot.com/img/logo_youthify.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href  ="css/homepage.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
+
+</head>
+<body>
+<div class="phone">
+
+  <div class="top-nav">
+    <div class="logo"><img src="https://storage.googleapis.com/youthstring.appspot.com/img/logo_youthify.png" height="50px"></div>
+    <div class="company-name"> 
+      <div class="youthstring">  <span class="youth"> You</span><span class="string">thstring</span></div>
+      <div class="slogan-line">A string that connects people</div>
+    </div>  
+
+  </div>
+
+  <div class="headline">
+    <div class="meetnew head">Venture into</div>
+    <div class="people-easily head">Mystery, Laughter and Connection</div>
+    <div class="enjoy head">lie ahead ✨</div>
+  </div>
+
+  <div class="live-event">
+    <div id="live-lottie"></div>
+    <div class="live-text">Live Event</div>
+  </div>
+  <div class="events-body">
+    <div class="event-card">
+      <div class="img-container">
+        <div class="only-img"><img src="https://storage.googleapis.com/youthstring.appspot.com/img/events_vector/3514564.jpg" class="vector-blind-date" alt="img">
+          <div class="date-month">
+          <div class="month">Oct</div>
+          <div class="date">01</div>
+          
+        </div>
+  
+        </div>
+  
+
+        <div class="bottom">
+          <div class="bottom-container">
+            <div class="content-container">
+              <div class="blind-date-header">
+               <div class="blind-date-text"> <h2>Offline Blind Date  </h2>  </div>
+               <div class="blue-tick-icon">
+                <svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+                  <polygon fill="#42a5f5" points="29.62,3 33.053,8.308 39.367,8.624 39.686,14.937 44.997,18.367 42.116,23.995 45,29.62 39.692,33.053 39.376,39.367 33.063,39.686 29.633,44.997 24.005,42.116 18.38,45 14.947,39.692 8.633,39.376 8.314,33.063 3.003,29.633 5.884,24.005 3,18.38 8.308,14.947 8.624,8.633 14.937,8.314 18.367,3.003 23.995,5.884"></polygon><polygon fill="#fff" points="21.396,31.255 14.899,24.76 17.021,22.639 21.428,27.046 30.996,17.772 33.084,19.926"></polygon>
+                  </svg>
+               </div>
+                
+                
+              </div>
+
+               <div class="bottom-bd-container">
+                <div class="date_and_pass">
+                  <div class="delhi">
+                    <div class="date-time"> Sun, 1st Oct
+
+                    </div>
+                    <div class="place">
+                      Cantino, GTB Nagar
+
+                     </div>
+                  </div>
+
+                  <div class="check-pass">
+                    <button onclick="pdp_nav()" class="pass-btn">Check Passes <span>➤</span></button>
+                  </div>
+
+                
+
+                </div>
+
+                
+               </div> 
+
+
+
+            </div>
+        </div>
+        
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <!-- <div id="home-page-lottie">
+  </div> -->
+  <!-- <div id="home-page-lottie1">
+  </div>   -->
+
+  <div id="home-page-lottie2">
+  </div>
+
+
+<!-- <div class="content">
+
+    <h1>WELCOME!!</h1>
+    <p>Explore and discover exciting events!</p>
+  </div> -->
+
+  
+  <div class="bottom-tabs">
+    <div class="tab active">
+      <!-- <i class="fas fa-home<i class="fa-solid fa-location-dot"></i>"></i> -->
+
+      <img src="https://storage.googleapis.com/youthstring.appspot.com/img/icons/home_icon.png" alt="home" height="30px">
+    </div>
+
+    <div class="tab">
+      <!-- <i class="fas fa-ticket-alt"></i> -->
+      <img src="https://storage.googleapis.com/youthstring.appspot.com/img/icons/ticket.png" alt="home" height="30px">
+
+    </div>
+    <div class="tab" id ="tab">
+      <!-- <i class="fas fa-envelope"></i> -->
+      <!-- <img src="https://storage.googleapis.com/youthstring.appspot.com/img/icons/event_icon.png" alt="home" height="30px"> -->
+
+    </div>
+    <div class="tab" >
+      <!-- <i class="fas fa-info-circle"></i> -->
+      <img src="https://storage.googleapis.com/youthstring.appspot.com/img/icons/privacy.png" alt="home" height="30px">
+
+    </div>
+  </div>
+
+
+
+</div>
+<footer>
+  <div class = footer-text>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+  </div>
+  <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+</footer>
+
+
+
+
+
+
+  <script>
+
+    function pdp_nav(){
+      window.location.href = "pdp_screen.html";
+      console.log("done");
+    }
+    // Initialize Lottie animation with cloud JSON
+    var animation = bodymovin.loadAnimation({
+      container: document.getElementById('tab'),
+      renderer: 'svg', // Choose the renderer (svg, canvas, html)
+      loop: true, // Set loop to true or false
+      autoplay: true, // Set autoplay to true or false
+      path: "img/animation_ll51glza.json" // URL of your cloud JSON file
+      
+    })
+    var home_page_lottie = bodymovin.loadAnimation({
+      container:document.getElementById('home-page-lottie'),
+      renderer:'svg',
+      loop:true,
+      autoplay:true,
+      path:"img/lotties/animation_ll69sk3x.json"
+    })
+    var liveEvent = bodymovin.loadAnimation({
+      container:document.getElementById('live-lottie'),
+      renderer:'svg',
+      loop:true,
+      autoplay:true,
+      path:"img/lotties/live_event.json"
+    })
+
+    var home_page_lottie1 = bodymovin.loadAnimation({
+      container:document.getElementById('home-page-lottie1'),
+      renderer:'svg',
+      loop:true,
+      autoplay:true,
+      path:"img/lotties/animation_ll69st0v.json"
+    })
+    var home_page_lottie2 = bodymovin.loadAnimation({
+      container:document.getElementById('home-page-lottie2'),
+      renderer:'svg',
+      loop:true,
+      autoplay:true,
+      path:"img/lotties/animation_ll69u1td.json"
+    })
+
+
+  const divElement = document.querySelector('.content-container');
+let hasDivAppeared = false; // Flag to track if the div has appeared
+
+function checkScroll() {
+  if (!hasDivAppeared) {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    
+    const triggerPosition = windowHeight / 2;
+    
+    if (scrollPosition > triggerPosition) {
+      divElement.classList.remove('hidden');
+      console.log("if");
+      hasDivAppeared = true; // Set the flag to true once the div appears
+    }
+  }
+}
+
+window.addEventListener('scroll', checkScroll);
+
+checkScroll(); // Initial check in case the user lands on the page already scrolled
+
+
+
+    console.log("working");
+  </script>
+  
+
+</body>
+</html>
