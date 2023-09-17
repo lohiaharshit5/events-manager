@@ -1,53 +1,39 @@
-// Get Data from the URL string
-// Assuming this code is on the next_page.html
-// function getDataFromURL() {
-//   // Extract the query parameter from the URL
-//   var urlParams = new URLSearchParams(window.location.search);
-//   var responseDataJSON = urlParams.get('data');
-
-//   // Parse the JSON string back into a JavaScript object
-//   var responseData = JSON.parse(responseDataJSON);
-
-//   // Now you can use the responseData object to access the data from the previous page
-//   console.log(responseData);
-//   console.log('discount =', responseData.discount);
-//   console.log('gender =',responseData.gender);
-//   console.log('quantity=',responseData.quantity);
-//   console.log('final amount =',responseData.final_amount);
-//   console.log('age= ', responseData.Age);
-//   localStorage.setItem('discount',responseData.discount );
-//   localStorage.setItem('gender',responseData.gender );
-//   localStorage.setItem('quantity',responseData.quantity );
-//   localStorage.setItem('final_amount',responseData.final_amount);
-//   localStorage.setItem('Age',responseData.Age );
-//   console.log('local storage done');
-// }
+var logoutContainer = document.querySelector('.logout-container');
+var loginForm = document.querySelector('.login-form');
+var googleLogin = document.querySelector('.google-login');
+var orText = document.querySelector('.or-text');
+var welcomeMessage = document.querySelector('.welcome-message');
+var logout = document.querySelector('.logout');
+var update = document.querySelector('.update-button');
+var firstName = document.querySelector('.first-name');
 
 
+function deleteUser(){
+    localStorage.clear()
+    window.location.href='homepage.html'
+}
 
-// getDATA();
-// function getDATA(){
-//   const userDataString = localStorage.getItem("quantity");
+checkScreen()
+
+function checkScreen(){
+    console.log('check');
+    // localStorage.removeItem('user_id');
+    // localStorage.removeItem('google_user_id');
+if (localStorage.getItem('google_user_id')!=null || localStorage.getItem('user_id')!=null ) {
+    console.log('true condition');
+    // logoutContainer.style.display='none';
+    loginForm.style.display = 'none';
+    googleLogin.style.display = 'none';
+    orText.style.display = 'none';
+    welcomeMessage.innerText = 'This name will be shown on your Invoice!'
+    logout.style.display='block';
+    update.style.display='flex';
+    firstName.style.display='flex';
+    
 
 
-// // Parse the JSON string back to an object
-//   const userData = JSON.parse(userDataString);
-
-// // Now you can access the properties of the JSON object
-//   console.log("user_data_quantity:", userDataString);
-//   // console.log("Name:", userData.name);
-//   // console.log("Email:", userData.email);
-
-
-// }
-// Call the function to get the data when the page loads
-// getDataFromURL();
-
-
-
-// Url string data ended
-
-
+}
+}
 
 var otp = document.getElementById("otp");
 var sendotpButton = document.getElementById("send-otp");
@@ -130,19 +116,17 @@ function codeverify() {
         buttonText.style.opacity = 0;
         dots.style.display = 'flex';
         console.log('OTP Verified - opening result page');
-
-
-        const urlParams = new URLSearchParams(window.location.search);
+        // const urlParams = new URLSearchParams(window.location.search);
         console.log('data fetching url')
-        const responseDataJSON = JSON.parse(urlParams.get('data'));
-        console.log('data fetched-', responseDataJSON)
+        // const responseDataJSON = JSON.parse(urlParams.get('data'));
+        // console.log('data fetched-', responseDataJSON)
         // var discount = responseData.discount;
-        const gender = responseDataJSON.gender;
+        const gender = null;
         console.log(gender)
-        const quantity=responseDataJSON.quantity;
+        const quantity=null;
         console.log(quantity)
         // var final_amount =responseData.final_amount;
-        const age=  responseDataJSON.Age;
+        const age=  null;
         console.log(age)
         console.log(mobileNumberInput)
         const mobileApiData = {
@@ -167,36 +151,21 @@ function codeverify() {
           // Parse the JSON string back into a JavaScript object
           var responseData = JSON.parse(responseDataJSON);
         
-          // Now you can use the responseData object to access the data from the previous page
-          console.log(responseData);
-          console.log('discount =', responseData.discount);
-          console.log('gender =',responseData.gender);
-          console.log('quantity=',responseData.quantity);
-          console.log('final amount =',responseData.final_amount);
-          console.log('age= ', responseData.Age);
-          localStorage.setItem('discount',responseData.discount );
-          localStorage.setItem('gender',responseData.gender );
-          localStorage.setItem('quantity',responseData.quantity );
-          localStorage.setItem('final_amount',responseData.final_amount);
-          localStorage.setItem('Age',responseData.Age );
           localStorage.setItem('user_id',userID );
-          console.log('local storage done');
+          localStorage.setItem('mobile_user_id',userID );
+        //   console.log('local storage done');
 
           console.log("userId:", userID);
           console.log("user_id from local", localStorage.getItem("user_id"));
-          console.log('age=', age);
-          console.log('mobileAPIDATA=',mobileApiData);
-          const gen = localStorage.getItem('gender');
-          console.log(gen);
-          const nextPageURL = "payment_gateway.html" +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
+          console.log('mobileAPIDATA=',mobileApiData)
+          const nextPageURL = "homepage.html" 
+        //   +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
 
           window.location.href = nextPageURL;
           // Here you can use the data returned by the API response
         });
-        // console.log('out_of_loop-', userID);s
-        // window.location.href = "https://events-manager-six.vercel.app/payment_gateway.html";
 
-        
+
     }).catch(function () {
 
         console.log('OTP Not correct');

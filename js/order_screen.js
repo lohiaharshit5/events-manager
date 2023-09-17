@@ -8,7 +8,7 @@ var container = document.getElementById('loader');
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'img/lotties/animation_ll69sk3x.json'
+            path: 'img/lotties/animation_ll69st0v.json'
         };
 
         var anim = lottie.loadAnimation(animationOptions);

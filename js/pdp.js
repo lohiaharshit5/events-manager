@@ -286,8 +286,11 @@ function passDataAndRedirect(){
     var responseJSON = JSON.stringify(response);
     var nextPageURL = 'login_page.html'+"?data=" + encodeURIComponent(responseJSON)
 
-
-    window.location.href = nextPageURL
+    if (localStorage.getItem('mobile_user_id')==null && localStorage.getItem('google_user_id')==null){
+    window.location.href = nextPageURL}
+    else{
+    window.location.href = 'payment_gateway.html'
+    }
 
     console.log(response)
     return response}
