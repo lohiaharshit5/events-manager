@@ -115,10 +115,34 @@ function autoShowSlides() {
     }, 2000);
   }
   
-  var preloader = document.getElementById("loader");
-  function loaderfunction(){
-    preloader.style.display = 'none';
-  }
+  var container = document.getElementById('loader');
+    // function loadingfunction(){
+    // container.style.display = 'none';
+    //   }
+
+    var animationOptions = {
+            container: container,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'img/lotties/animation_ll69st0v.json'
+        };
+
+        var anim = lottie.loadAnimation(animationOptions);
+
+        function hideLoader() {
+            container.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        // Simulate a delay (remove this in your actual implementation)
+        setTimeout(hideLoader, 1000);
+
+
+  // function loaderfunction(){
+  //   preloader.style.display = 'none';
+  // }
+  
 
 
 
@@ -219,6 +243,10 @@ function selectGender(gender) {
 
 
 function passDataAndRedirect(){
+// loader start
+
+
+  // loader ends here
   var quantity = document.getElementById('add-passes btn');
   var Gender = document.getElementById('gender-button');
   var Discount = document.querySelector('.dynamic-amount');
@@ -242,7 +270,19 @@ function passDataAndRedirect(){
   console.log('local storage done');
 
   console.log(response);
+  // checking for the valid pass quantity, age, gender
+
   if(quantity.innerText!= ' Add Passes' && Gender.innerText!= ' Gender' && parseInt(age.innerText)>=18 && parseInt(extractIntegersFromString(finalAmount.innerText))>0){
+
+    const dotButton = document.getElementById('myButton');
+    const buttonText = document.querySelector('.button-text');
+    const dots = document.querySelector('.dots');
+  
+    dotButton.addEventListener('click', () => {
+        // Toggle the visibility of the button text and the dots
+        buttonText.style.opacity = 0;
+        dots.style.display = 'flex';
+    });
     var responseJSON = JSON.stringify(response);
     var nextPageURL = 'login_page.html'+"?data=" + encodeURIComponent(responseJSON)
 

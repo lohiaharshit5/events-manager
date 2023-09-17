@@ -8,7 +8,7 @@ body{
   background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back3.jpg') no-repeat;
   background-size: cover;
   margin: 0;
-  height: 100vh;
+  height: 100%;
   background-position: center;
 
 }
@@ -176,6 +176,18 @@ body{
   margin: 0;
   padding: 10px 2px;
 }
+
+
+#loader{
+    position: fixed;
+    width:110%;
+    top: 0;
+    left:0;
+    height: 100vh;
+    background:white;
+    z-index: 2;
+  }
+
 
 
 @media only screen and (min-width:710px){

@@ -57,12 +57,33 @@ sendotpButton.addEventListener("click", ()=>{
 ;}
 );
 
-var preloader = document.getElementById("loader");
-function loadingfunction(){
-  preloader.style.display = 'none';
-}
 
-// OTP FIREBASE STARTING
+// For lottie loader
+var container = document.getElementById('loader');
+    // function loadingfunction(){
+    // container.style.display = 'none';
+    //   }
+
+    var animationOptions = {
+            container: container,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'img/lotties/animation_ll69u1td.json'
+        };
+
+        var anim = lottie.loadAnimation(animationOptions);
+
+        function hideLoader() {
+            container.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        // Simulate a delay (remove this in your actual implementation)
+        setTimeout(hideLoader, 3000);
+// lottie loader end
+
+        // OTP FIREBASE STARTING
 
 const firebaseConfig = {
   apiKey: "AIzaSyD6mMjTj2XUSe5u0Si-BibEo4SEVfnrTuQ",
@@ -89,12 +110,34 @@ function render() {
 //verify sms code
 
 function codeverify() {
+
+    // console.log(dotButton);
+    // console.log(buttonText);
+    // console.log(dots);
+
+    // dotButton.addEventListener('click', () => {
+    //     // Toggle the visibility of the button text and the dots
+     
+    // });
+
+    
     var code = document.getElementById('verificationcode').value;
     mobileNumberInput = (document.getElementById('number').value);
     console.log('mobile-no',mobileNumberInput);
 
     coderesult.confirm(code).then(function () {
+
+
+        // script.js
+
+
+
         console.log(code);
+        const dotButton = document.getElementById('send-otp');
+        const buttonText = document.querySelector('.button-text');
+        const dots = document.querySelector('.dots');
+        buttonText.style.opacity = 0;
+        dots.style.display = 'flex';
         console.log('OTP Verified - opening result page');
         const urlParams = new URLSearchParams(window.location.search);
         console.log('data fetching url')
@@ -153,6 +196,7 @@ function codeverify() {
           const gen = localStorage.getItem('gender');
           console.log(gen);
           const nextPageURL = "payment_gateway.html" +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
+
           window.location.href = nextPageURL;
           // Here you can use the data returned by the API response
         });
@@ -160,7 +204,16 @@ function codeverify() {
         // window.location.href = "https://events-manager-six.vercel.app/payment_gateway.html";
 
     }).catch(function () {
+
         console.log('OTP Not correct');
+        var errorContainer = document.getElementById('errorcontainer');
+        errorContainer.style.display = "flex";
+        errorContainer.innerText = "OTP not correct!";
+        errorContainer.style.color ="red";
+
+        setTimeout(function () {
+          errorContainer.style.display = "none";
+      }, 3000);
     })
 }
 
@@ -213,7 +266,14 @@ function otpFunction(){
 function changeButtonName() {
   var captcha = document.getElementById('recaptcha-container');
   var myButton = document.getElementById("send-otp");
-  myButton.innerText = "Verify OTP";
+  myButton.innerHTML = `<span class="button-text">Verify OTP</span>
+  <div class="dots">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>
+      <span class="dot dot3"></span>
+  </div>`;
+
+
   myButton.setAttribute("onclick", "codeverify()")
   captcha.style.display = "none";
 }

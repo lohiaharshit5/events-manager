@@ -57,10 +57,14 @@ section.side {
   padding: 10px 2px;
   padding-bottom: 45px;}
 
+.button-text{
+  color:white
+}
+
 .separator {
   width: 150px;
   height: 4px;
-  background-color: red;
+  background-color: #f06;
   margin: 24px;
 }
 
@@ -120,7 +124,7 @@ button.send-otp-button {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
-  background: red;
+  background: #f06;
   cursor: pointer;
   transition: opacity 0.4s;
 }
@@ -192,6 +196,8 @@ body{
       display: none;
   }
 }
+
+/* 
 #loader{
   position: fixed;
   width:110%;
@@ -199,7 +205,15 @@ body{
   background:#fff
   url('https://i.gifer.com/7VA.gif') no-repeat center;
   z-index: 99999;
+} */
 
+#loader{
+  position: fixed;
+  width:110%;
+  height: 100vh;
+  background:rgb(250, 2, 101);
+  /* url('https://i.gifer.com/7VA.gif') no-repeat center; */
+  z-index: 99999;
 }
 
 #errorContainer {
@@ -223,4 +237,63 @@ body{
 
  }
 
-/* https://i.gifer.com/1Ktv.gif */
+/* loader button css */
+
+
+/* styles.css */
+
+
+.button-text {
+  display: inline-block;
+  transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+}
+
+.dots {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Initially hidden */
+}
+
+.dot1 {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  animation: bounce 1s infinite;
+  animation-delay: 0s;}
+.dot2 {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  animation: bounce 1s infinite;
+  animation-delay: 0.3s;
+}
+.dot3 {
+  width: 10px;
+  height: 10px;
+  background-color:white;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  animation: bounce 1s infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  25% {
+      transform: translateY(-10px);
+  }
+  50% {
+      transform: translateY(0);
+  }
+}
+/* loader button css */

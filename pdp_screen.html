@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="css/pdp.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
 </head>
-<body onload="loaderfunction()" >
+<body  >
     <div id = "loader"></div>
     <div class="slide-show-container">
         <div class="my-slides fade">
@@ -369,7 +370,17 @@
     <div id="error-message"></div>
 
     <div class="bottom-part">
- <button id = "myButton" class="get-pass-button" onclick="passDataAndRedirect()">Get My Pass</button></div>
+ <button id = "myButton" class="get-pass-button" onclick="passDataAndRedirect()">
+    <span class="button-text">Get My Pass</span>
+    <div class="dots">
+        <span class="dot1"></span>
+        <span class="dot2"></span>
+        <span class="dot3"></span>
+    </div>
+
+
+
+</button></div>
     </div>
 
 

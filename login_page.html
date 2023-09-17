@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/login_page.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
     <title>Login landing page</title>
 </head>
-<body onload="loadingfunction()">
+<body>
   <div id="loader"></div>
   <div class="upper-container">
     <div class="mobile-login">
@@ -26,7 +27,7 @@
 
             <div class="login-form">
                 <div class="form-control">
-                    <input type="text" id = "number" placeholder="Mobile Number">
+                    <input type="tel" id = "number" placeholder="Mobile Number">
                     <i class="fas fa-user"></i>
                     
                 </div>
@@ -36,7 +37,19 @@
                 </div>
                 <div id="recaptcha-container"></div>
                 <div id="errorcontainer"><div id = "error-message" class= "error"></div>></div>
-                <button class="send-otp-button" id = "send-otp" onclick="otpFunction()">Send OTP</button>
+
+
+                <button class="send-otp-button" id = "send-otp" onclick="otpFunction()">
+                    
+                    <span class="button-text" id = "button-text">Send OTP</span>
+                    <div class="dots">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                
+                </button>
+
 
             </div>
                 

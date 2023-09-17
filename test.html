@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google Login Example</title>
-  <!-- Include the Google Sign-In API -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="https://apis.google.com/js/api.js"></script>
-
+    <title>Button with Animated Dots</title>
+    <link rel="stylesheet" type="text/css" href="css/test.css">
 </head>
 <body>
-  <!-- Create a button for Google Sign-In -->
-  <div id="gSignInWrapper" data-onsuccess="onSignIn">
-    <div id="customBtn">
-      <span class="icon"></span>
-      <span class="buttonText" ><button onclick="getParams()"> Sign in with Google</button> </span>
-    </div>
-  </div>
+    <button id="myButton" class="get-pass-button">
+        <span class="button-text">Click Me</span>
+        <div class="dots">
+            <span class="dot dot1"></span>
+            <span class="dot dot2"></span>
+            <span class="dot dot3"></span>
+        </div>
+    </button>
 
-  <!-- Include the Google Sign-In script -->
-  <script src="/js/tests.js"></script>
+    <script src="js/test.js"></script>
 </body>
 </html>

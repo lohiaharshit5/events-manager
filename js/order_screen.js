@@ -1,8 +1,25 @@
-var preloader = document.getElementById("loader");
-function loadingfunction(){
-  preloader.style.display = 'none';
-  console.log('loader worked');
-}
+var container = document.getElementById('loader');
+    // function loadingfunction(){
+    // container.style.display = 'none';
+    //   }
+
+    var animationOptions = {
+            container: container,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'img/lotties/animation_ll69sk3x.json'
+        };
+
+        var anim = lottie.loadAnimation(animationOptions);
+
+        function hideLoader() {
+            container.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        // Simulate a delay (remove this in your actual implementation)
+        setTimeout(hideLoader, 3000);
 
 
 

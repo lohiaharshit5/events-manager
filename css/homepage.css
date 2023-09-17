@@ -148,9 +148,9 @@ font-size: 30px;
   display: flex;
   letter-spacing: 2px;
   background:#f06;
-  margin-top:20px;
-
+  margin-top:10px;
 }
+
 
 
 .bottom-bd-container{
@@ -290,6 +290,15 @@ transform: translateX(-100%);
   color: #f06;
   font-weight: bolder;
   
+}
+
+#loader{
+  position: fixed;
+  width:110%;
+  height: 100vh;
+  background:rgb(250, 2, 101);
+  /* url('https://i.gifer.com/7VA.gif') no-repeat center; */
+  z-index: 99999;
 }
 
 .blind-date-header{

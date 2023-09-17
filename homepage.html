@@ -10,7 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
 
 </head>
-<body>
+<body onload="loadingfunction()">
+<div id="loader"></div>
 <div class="phone">
 
   <div class="top-nav">
@@ -94,8 +95,8 @@
   </div>
   
   <!-- <div id="home-page-lottie">
-  </div> -->
-  <!-- <div id="home-page-lottie1">
+  </div>
+  <div id="home-page-lottie1">
   </div>   -->
 
   <div id="home-page-lottie2">
@@ -143,9 +144,12 @@
       <a href="#">Contact Us</a>
   </div>
   <div class="social-icons">
+      <a href="#"><i class="fab fa-google"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      
+
   </div>
 </footer>
 
@@ -154,78 +158,7 @@
 
 
 
-  <script>
-
-    function pdp_nav(){
-      window.location.href = "pdp_screen.html";
-      console.log("done");
-    }
-    // Initialize Lottie animation with cloud JSON
-    var animation = bodymovin.loadAnimation({
-      container: document.getElementById('tab'),
-      renderer: 'svg', // Choose the renderer (svg, canvas, html)
-      loop: true, // Set loop to true or false
-      autoplay: true, // Set autoplay to true or false
-      path: "img/animation_ll51glza.json" // URL of your cloud JSON file
-      
-    })
-    var home_page_lottie = bodymovin.loadAnimation({
-      container:document.getElementById('home-page-lottie'),
-      renderer:'svg',
-      loop:true,
-      autoplay:true,
-      path:"img/lotties/animation_ll69sk3x.json"
-    })
-    var liveEvent = bodymovin.loadAnimation({
-      container:document.getElementById('live-lottie'),
-      renderer:'svg',
-      loop:true,
-      autoplay:true,
-      path:"img/lotties/live_event.json"
-    })
-
-    var home_page_lottie1 = bodymovin.loadAnimation({
-      container:document.getElementById('home-page-lottie1'),
-      renderer:'svg',
-      loop:true,
-      autoplay:true,
-      path:"img/lotties/animation_ll69st0v.json"
-    })
-    var home_page_lottie2 = bodymovin.loadAnimation({
-      container:document.getElementById('home-page-lottie2'),
-      renderer:'svg',
-      loop:true,
-      autoplay:true,
-      path:"img/lotties/animation_ll69u1td.json"
-    })
-
-
-  const divElement = document.querySelector('.content-container');
-let hasDivAppeared = false; // Flag to track if the div has appeared
-
-function checkScroll() {
-  if (!hasDivAppeared) {
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    
-    const triggerPosition = windowHeight / 2;
-    
-    if (scrollPosition > triggerPosition) {
-      divElement.classList.remove('hidden');
-      console.log("if");
-      hasDivAppeared = true; // Set the flag to true once the div appears
-    }
-  }
-}
-
-window.addEventListener('scroll', checkScroll);
-
-checkScroll(); // Initial check in case the user lands on the page already scrolled
-
-
-
-    console.log("working");
-  </script>
+<script src="js/homepage.js"></script>
   
 
 </body>

@@ -1,77 +1,67 @@
-.reviews-container {
-    width: 400px;
-    height: 200px;
-    overflow-x: scroll;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    padding: 10px;
+/* styles.css */
+
+.get-pass-button {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+.button-text {
+  display: inline-block;
+  transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+}
+
+.dots {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Initially hidden */
+}
+
+.dot1 {
+  width: 10px;
+  height: 10px;
+  background-color: #f06;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  animation: bounce 1s infinite;
+  animation-delay: 0s;}
+.dot2 {
+  width: 10px;
+  height: 10px;
+  background-color: #f06;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  animation: bounce 1s infinite;
+  animation-delay: 0.3s;
+}
+.dot3 {
+  width: 10px;
+  height: 10px;
+  background-color: #f06;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  animation: bounce 1s infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
   }
-  
-  .reviews-content {
-    white-space: nowrap;
-    display: flex;
+  25% {
+      transform: translateY(-10px);
   }
-  
-  .review {
-    width: 200px;
-    height: 160px;
-    margin-right: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
+  50% {
+      transform: translateY(0);
   }
-  
-  .review:before,
-  .review:after {
-    content: "";
-    position: absolute;
-    top: -5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: red;
-  }
-  
-  .review:before {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .review:after {
-    left: 10px;
-  }
-  
-  .review:before,
-  .review:after,
-  .review div {
-    z-index: 1;
-  }
-  
-  .review div {
-    position: relative;
-  }
-  
-  .review div:before,
-  .review div:after {
-    content: "";
-    position: absolute;
-    top: -5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: red;
-  }
-  
-  .review div:before {
-    left: -10px;
-  }
-  
-  .review div:after {
-    right: -10px;
-  }
-  
+}
