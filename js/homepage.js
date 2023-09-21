@@ -2,15 +2,20 @@ var container = document.getElementById('loader');
     // function loadingfunction(){
     // container.style.display = 'none';
     //   }
-
+    if (localStorage.getItem("logout")=='1'){
+      var lottiePath= 'img/lotties/logout.json'
+    }
+    else{
+      var lottiePath= 'img/lotties/animation_ll69u1td.json'
+    }
     var animationOptions = {
             container: container,
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'img/lotties/animation_ll69u1td.json'
+            path: lottiePath
         };
-
+        localStorage.removeItem("logout");
         var anim = lottie.loadAnimation(animationOptions);
 
         function hideLoader() {
@@ -19,7 +24,9 @@ var container = document.getElementById('loader');
         }
 
         // Simulate a delay (remove this in your actual implementation)
-        setTimeout(hideLoader, 3000);
+        setTimeout(hideLoader, 3000)
+        
+        ;
 
 const urlParams = new URLSearchParams(window.location.search);
 

@@ -13,7 +13,8 @@ var updateMessage = document.querySelector('.update-message');
 
 
 function deleteUser(){
-    localStorage.clear()
+    localStorage.clear();
+    localStorage.setItem("logout", 1);
     window.location.href='homepage.html'
 }
 
