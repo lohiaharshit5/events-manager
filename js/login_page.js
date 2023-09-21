@@ -69,7 +69,7 @@ var container = document.getElementById('loader');
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'img/lotties/animation_ll69u1td.json'
+            path: 'img/lotties/login_account.json'
         };
 
         var anim = lottie.loadAnimation(animationOptions);
@@ -196,7 +196,7 @@ function codeverify() {
         // console.log('out_of_loop-', userID);s
         // window.location.href = "https://events-manager-six.vercel.app/payment_gateway.html";
 
-        
+
     }).catch(function () {
 
         console.log('OTP Not correct');

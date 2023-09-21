@@ -21,8 +21,10 @@ var container = document.getElementById('loader');
         // Simulate a delay (remove this in your actual implementation)
         setTimeout(hideLoader, 3000);
 
-
-
+// checking body resolution
+if (localStorage.getItem('mobile_user_id')==null && localStorage.getItem('google_user_id')==null){
+    document.body.style.height='100vh';
+}
 
 try{
   getDATA();

@@ -21,6 +21,92 @@ var container = document.getElementById('loader');
         // Simulate a delay (remove this in your actual implementation)
         setTimeout(hideLoader, 3000);
 
+const urlParams = new URLSearchParams(window.location.search);
+
+try{
+  
+  const googleCode = urlParams.get('code');
+  console.log('google_code:', googleCode);
+  if (googleCode!=null){
+  console.log('in if');
+  googleAPIData();}
+  else {
+    getDATA();
+    console.log('in else');
+  }
+  throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
+} catch (error) {
+  // This block will run if an error is thrown in the try block
+  // The `error` variable will hold the error object with information about the error
+  console.error('An error occurred:', error.message);
+}
+
+
+
+// google login data capturing & updating started
+
+function googleAPIData(){
+  const googleCode = urlParams.get('code');
+  console.log(urlParams);
+  console.log("googlecode:",googleCode);
+  if (googleCode!=null){
+    console.log("in google code");
+  var modifiedGoogleCode = googleCode.replace(/^4\//, "");
+  var apiUrl = 'https://mysite-ten-psi.vercel.app/googlelogin_accounts_homepage/' + String(modifiedGoogleCode);
+  console.log('api_URL=', apiUrl);
+  fetch(apiUrl, 
+    {headers: {
+    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+    "Content-Type": "application/json"
+    // 'Content-Type': 'application/x-www-form-urlencoded',
+  }}
+)
+  .then(response => response.json())
+  .then(data => {
+    // Process the response data
+    console.log(data);
+    const google_data= data;
+    console.log('google_data -  ', google_data)
+
+// 
+    fetch('https://mysite-ten-psi.vercel.app/user_email_update/', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(google_data)
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log('Response:', data);
+
+
+    console.log('POST api working', data.user_id);
+    localStorage.setItem("google_user_id", data.user_id);
+    console.log('in data');
+  // Do something with the user_id
+    console.log("User ID:", data.user_id);
+
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+// 
+    // anotherAPIFunction(google_data);
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error('Error:', error);
+  });
+}}
+
+
+// google login data capturing & updating ended
+
+
+
 
 
     function pdp_nav(){

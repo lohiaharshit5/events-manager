@@ -6,6 +6,10 @@ var welcomeMessage = document.querySelector('.welcome-message');
 var logout = document.querySelector('.logout');
 var update = document.querySelector('.update-button');
 var firstName = document.querySelector('.first-name');
+var updateMessage = document.querySelector('.update-message');
+
+
+
 
 
 function deleteUser(){
@@ -29,10 +33,27 @@ if (localStorage.getItem('google_user_id')!=null || localStorage.getItem('user_i
     logout.style.display='block';
     update.style.display='flex';
     firstName.style.display='flex';
-    
+    const user_id_json = {'mobile_user_id':localStorage.getItem('mobile_user_id'), 'google_user_id':localStorage.getItem('google_user_id')}
+    get_user_name(user_id_json)
+    .then(data=> {
+      console.log("first_last_name_data",data);
+      if(data.message=="success"){
+        console.log("in if");
+        console.log(data.last_name)
+        firstName.innerHTML= `<input id = "first_name" class="name" value=${data.first_name} type="text" placeholder="Firstname"></input>
+        <input id ="last_name" class="name" value="${data.last_name}" type="text" placeholder="Lastname"></input>
+        `;
+        console.log(firstName);
 
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    })
 
 }
+
+
 }
 
 var otp = document.getElementById("otp");
@@ -55,7 +76,7 @@ var container = document.getElementById('loader');
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'img/lotties/animation_ll69u1td.json'
+            path: 'img/lotties/login_account.json'
         };
 
         var anim = lottie.loadAnimation(animationOptions);
@@ -271,6 +292,90 @@ function mobile_otp(mobile_attributes){
     'Content-Type': 'application/json',
   },
   body:JSON.stringify(mobile_attributes)
+  };
+  
+  return fetch(url, requestOptions)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok.');
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}
+
+function get_user_name(user_id_json){
+  const url = 'https://mysite-ten-psi.vercel.app/get_user_name/';
+  
+  const requestOptions = {
+  method: 'POST',
+  headers: {
+    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+    'Content-Type': 'application/json',
+  },
+  body:JSON.stringify(user_id_json)
+  };
+  
+  return fetch(url, requestOptions)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok.');
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}
+
+// User_name update function
+
+function user_name_update(){
+  var first_name_input = document.getElementById('first_name');
+  var last_name_input = document.getElementById('last_name');
+  const user_data={
+    "mobile_user_id":localStorage.getItem("mobile_user_id"),
+    "google_user_id":localStorage.getItem("google_user_id"),
+    "first_name":first_name_input.value,
+    "last_name":last_name_input.value
+  }
+  console.log(user_data);
+  update_name_api(user_data)
+  .then(data=>{
+    console.log(data)
+    updateMessage.innerText=data.message;
+    updateMessage.style.color='white';
+    updateMessage.style.borderRadius='10px';
+    updateMessage.style.background='rgb(170 255 0 / 70%)';
+    updateMessage.style.display='flex';
+    updateMessage.style.padding='10px 10px'
+    updateMessage.style.justifyContent='center';
+    updateMessage.style.alignItems='center';
+    updateMessage.style.margin='10px';
+    setTimeout(function () {
+      updateMessage.style.display = "none";
+  }, 3000);
+  
+  }
+    )
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}
+
+
+function update_name_api(user_data){
+  const url = 'https://mysite-ten-psi.vercel.app/name_update/';
+  
+  const requestOptions = {
+  method: 'POST',
+  headers: {
+    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+    'Content-Type': 'application/json',
+  },
+  body:JSON.stringify(user_data)
   };
   
   return fetch(url, requestOptions)
