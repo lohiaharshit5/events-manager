@@ -19,13 +19,68 @@ try{
 }
 
 
-// try{
-//   getDataFromURL();
-//   throw new Error('This is an example error.'); // You can also manually throw an error using the `throw` statement
-// } catch (error) {
-//   // This block will run if an error is thrown in the try block
-//   // The `error` variable will hold the error object with information about the error
-//   console.error('An error occurred:', error.message);}
+function order_creation(){
+  var mobile_user_id = localStorage.getItem('mobile_user_id');
+  var google_user_id = localStorage.getItem('google_user_id');
+  var discount =parseInt(localStorage.getItem("discount" ));
+  var gender =localStorage.getItem('gender');
+  var quantity =parseInt(localStorage.getItem('quantity' ));
+  var final_amount=parseInt(localStorage.getItem('final_amount'));
+  var Age=parseInt(localStorage.getItem('Age' ));
+
+  
+  if (google_user_id==null){
+  var user_id = mobile_user_id
+  }
+  else{
+  var user_id = google_user_id
+  }
+  const users_data = {
+    "user_id":parseInt(user_id),
+    "quantity" :quantity,
+   "gender" :gender,
+     "age" :Age,
+     "amount":final_amount,
+     "event_id":1,
+     "discount":discount
+
+    }
+  order_api(users_data)
+  .then(data=>{
+    console.log("api Response: ", data);
+    window.location.href="order_screen.html";
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  })
+
+}
+
+
+function order_api(user_data){
+  const url = 'https://mysite-ten-psi.vercel.app/order_creation/';
+  
+  const requestOptions = {
+  method: 'POST',
+  headers: {
+    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+    'Content-Type': 'application/json',
+  },
+  body:JSON.stringify(user_data)
+  };
+  
+  return fetch(url, requestOptions)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok.');
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}
+
 
 try{
     getDATA();
@@ -187,31 +242,5 @@ function googleAPIData(){
 
 
 
-// Getting the user_id
-//   function user_id(){
-//     console.log("function started")
-//   const url = 'https://mysite-ten-psi.vercel.app/user_id/';
-//   const data = {
-//   "email_id": 'harshit@goldsetu.co',
-//   "amount": 100,
-// };
-
-//   const requestOptions = {
-//   method: 'POST',
-//   headers: {
-//     'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify(data),
-// };
-
-// fetch(url, requestOptions)
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-//   .catch(error => console.error('Error:', error));
-
-//   }
-
-  // axios
 
 

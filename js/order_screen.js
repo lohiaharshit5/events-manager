@@ -109,9 +109,19 @@ fetch(apiUrl, requestOptions)
         return response.json();
     })
     .then(data => {
-        console.log('Response data:', data);
+
+        const order_data = data;
+        console.log('Response data:');
         card_maker(data);
-        console.log("card maker worked")
+        console.log("card maker worked");
+        console.log("orders_data:", order_data);
+        console.log(data.total_orders);
+        // if (data.total_orders<=1){
+        //     body.style.hieght='100vh';
+        //     console.log('in if stat');
+
+        // }
+        // console.log(1234)
         // Handle the response data here
     })
     .catch(error => {

@@ -209,25 +209,49 @@ function otpFunction(){
   var otpButton = document.getElementById('otp');
   var mobileNumber = document.getElementById('number').value;
   if (mobileNumber!==null && mobileNumber.length == 10) 
-  {  otpButton.style.display="block";
+  {  
   var nn = document.getElementById('number').value;
   var number = '+91'+nn;
   console.log(number);
-  firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
-      window.confirmationResult = confirmationResult;
-      coderesult = confirmationResult;
-      console.log('OTP Sent');
-  }).catch(function (error) {
-      // error in sending OTP
-      alert(error.message);
-  });
-  console.log('otp worked');
-  console.log('mobilelength', mobileNumber.length);
-  changeButtonName();
+
+  if (localStorage.getItem("_grecaptcha")!=null){
+    otpButton.style.display="block";
+    firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
+        window.confirmationResult = confirmationResult;
+        coderesult = confirmationResult;
+        console.log('OTP Sent');
+        localStorage.removeItem("_grecaptcha");
+    }).catch(function (error) {
+        // error in sending OTP
+        alert(error.message);
+    });
+    console.log('otp worked');
+    console.log('mobilelength', mobileNumber.length);
+    changeButtonName();}
+    else{
+      try {
+        console.log("in else:");
+        // Throw an error
+        throw new Error("Please click the above Captcha!");
+      } catch (error) {
+
+        // Display the error on the user's screen
+        var errorContainer = document.getElementById("errorcontainer");
+        errorContainer.innerText = error.message;
+        errorContainer.style.display = "flex";
+        errorContainer.style.color = "red";
+        errorContainer.style.alignItems="center";
+        errorContainer.style.justifyContent="center";
+        // errorContainer.style.background="black"
+        // centerAlign(errorContainer); 
+        setTimeout(function () {
+          errorContainer.style.display = "none";
+      }, 3000);
+      
+    }
+    }}
 
 
-
-}
   else{
     try {
       // Throw an error
@@ -240,6 +264,9 @@ function otpFunction(){
       errorContainer.style.color = "red";
       errorContainer.style.alignItems="center";
       errorContainer.style.justifyContent="center";
+      setTimeout(function () {
+        errorContainer.style.display = "none";
+    }, 3000);
       // errorContainer.style.background="black"
       // centerAlign(errorContainer); 
     }

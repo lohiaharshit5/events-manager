@@ -694,7 +694,7 @@ letter-spacing: 2px;
 .final-dynamic-amount{
     display: flex;
     justify-content: space-between;
-    width: 105px;
+    gap :5px;
 }
 
 .cutted-amount{
@@ -975,7 +975,7 @@ Starting gender selection css
     border-radius: 50%;
     display: inline-block;
     margin: 0 4px;
-    animation: bounce 1s infinite;
+    animation: bounce 1s ifnfinite;
     animation-delay: 0s;}
   .dot2 {
     width: 10px;

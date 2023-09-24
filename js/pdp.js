@@ -156,6 +156,11 @@ let plusButton = document.getElementById('plus-btn');
 let mainAge= document.getElementById('age-selection');
 let minusButtonAge = document.getElementById('minus-btn-age');
 let plusButtonAge = document.getElementById('plus-btn-age');
+var finalAmount = document.querySelector('.final-amount');
+var cuttedAmount = document.querySelector('.cutted-amount');
+var discountAmount = document.querySelector('.dynamic-amount');
+
+
 
 
 mainAddtoCart.addEventListener("click", ()=>{
@@ -165,11 +170,28 @@ mainAddtoCart.addEventListener("click", ()=>{
   mainAddtoCart.style.borderRadius=0;
   plusButton.style.display = 'inline-block';
   minusButton.style.display = 'inline-block';
+
 }})
 plusButton.addEventListener("click", ()=>{
   mainAddtoCart.innerText=parseInt(mainAddtoCart.innerText) +1;
+
   plusButton.style.display = 'inline-block';
   minusButton.style.display = 'inline-block';
+  if (mainAddtoCart.innerText>=1){
+    console.log(1);
+    var discount_amount = Math.ceil((mainAddtoCart.innerText)*999*5/100) +50
+    discountAmount.innerText=`Rs ${discount_amount}`
+    var cutted_amount=parseInt(mainAddtoCart.innerText)*1049;
+    cuttedAmount.innerText =  `Rs${cutted_amount}`;
+    var finalMoney = cutted_amount-discount_amount;
+
+    finalAmount.innerText = ` Rs${finalMoney}`;
+
+  }
+  else {
+    console.log("more than 1");
+  }
+
 })
 minusButton.addEventListener("click", ()=>{
   if(parseInt(mainAddtoCart.innerText)<2){
@@ -180,9 +202,33 @@ minusButton.addEventListener("click", ()=>{
   </style><g><path class="st1" d="M26.1923828,21.6762695H8.0234375l3.8295898-19.4833984   C11.8659668,2.1270752,11.8521118,2.0645752,11.8519897,2H9.8522339H2.5c-0.5522461,0-1,0.4477539-1,1s0.4477539,1,1,1h6.9591064   L5.8261719,22.4833984c-0.0576172,0.293457,0.019043,0.597168,0.2089844,0.828125s0.4736328,0.3647461,0.7724609,0.3647461   h19.3847656c0.5522461,0,1-0.4477539,1-1S26.7446289,21.6762695,26.1923828,21.6762695z"/><circle class="st1" cx="19.6256008" cy="28" r="2"/><circle class="st1" cx="12.2049274" cy="28" r="2"/><path class="st1" d="M10.871582,2L8.119873,16h15.4137573L30.5,2H10.871582z M21.1259766,10h-1.75v1.75   c0,0.5522461-0.4472656,1-1,1s-1-0.4477539-1-1V10h-1.75c-0.5527344,0-1-0.4477539-1-1s0.4472656-1,1-1h1.75V6.25   c0-0.5522461,0.4472656-1,1-1s1,0.4477539,1,1V8h1.75c0.5527344,0,1,0.4477539,1,1S21.6787109,10,21.1259766,10z"/></g></svg>  Add Passes`;
   mainAddtoCart.style.borderRadius = '19px';
   console.log(mainAddtoCart.innerText);
+  var discount_amount = 50+Math.ceil((mainAddtoCart.innerText)*999*5/100);
+  discountAmount.innerText=`Rs 50`;
+  finalAmount.innerText = '  Rs999';
+  cuttedAmount.innerText = 'Rs1049 ';
+
+  
 }else{
   mainAddtoCart.innerText=parseInt(mainAddtoCart.innerText) -1;
+  if (mainAddtoCart.innerText>1){
+    console.log(1);
+    var discount_amount = 50+Math.ceil((mainAddtoCart.innerText)*999*5/100);
+    var cutted_amount=parseInt(mainAddtoCart.innerText)*1049;
+    cuttedAmount.innerText = `Rs${cutted_amount}`;
+    discountAmount.innerText=`Rs ${discount_amount}`;
+    var finalMoney = cutted_amount-discount_amount;
+
+    finalAmount.innerText = ` Rs${finalMoney}`;
+    
+    
+
+  }
+  else {
+    console.log("more than 1");
+  }
 }})
+
+
 
 // Age selection started
 
@@ -252,6 +298,7 @@ function passDataAndRedirect(){
   var Discount = document.querySelector('.dynamic-amount');
   var finalAmount = document.querySelector('.final-amount');
   var age = document.getElementById('age-selection');
+  
 
 
   
@@ -368,5 +415,7 @@ return fetch(url, requestOptions)
   console.error('Error fetching data:', error);
 });
 
-
 }
+
+// to calculate the total amount
+
