@@ -71,7 +71,19 @@ fetch(apiUrl, requestOptions)
     })
     .then(data => {
         console.log('Response data:', data);
+        if (data.total_orders>=1){
+
         card_maker(data);
+        if (data.total_orders==1){
+            document.body.style.height='100vh';
+        }}
+
+        else if (data.total_orders==0){
+            document.body.style.height='100vh';
+            console.log("YES");
+        }
+
+
         console.log("card maker worked")
         // Handle the response data here
     })
@@ -109,19 +121,11 @@ fetch(apiUrl, requestOptions)
         return response.json();
     })
     .then(data => {
-
-        const order_data = data;
-        console.log('Response data:');
         card_maker(data);
-        console.log("card maker worked");
-        console.log("orders_data:", order_data);
-        console.log(data.total_orders);
-        // if (data.total_orders<=1){
-        //     body.style.hieght='100vh';
-        //     console.log('in if stat');
-
-        // }
-        // console.log(1234)
+    
+        if (data.total_orders<=1){
+            document.body.style.height='100vh';
+        }
         // Handle the response data here
     })
     .catch(error => {
@@ -162,14 +166,15 @@ cardData.data.forEach(order => {
                       <span>Order Id:</span>
                       <span>${order.order_id}</span>
                   </div>
+                  <div class="quantity">
+                  <span>Quantity:</span>
+                  <span>${order.quantity}</span>
+                </div>
                   <div class="order-amount">
                       <span>Amount:</span>
                       <span>Rs ${order.final_amount}</span>
                   </div>
-                  <div class="discount">
-                  <span>Discount:</span>
-                  <span>${order.discount}</span>
-              </div>
+
                   <div class="order-venue">
                       <span>Venue:</span>
                       <span>${order.venue}</span>
@@ -178,6 +183,7 @@ cardData.data.forEach(order => {
                       <span>Event Date:</span>
                       <span>${order.date}</span>
                   </div>
+
                   <div class="order-date">
                       <span>Event Time:</span>
                       <span>${order.event_time}</span>
@@ -190,7 +196,7 @@ cardData.data.forEach(order => {
                       <i class="fa-solid fa-ticket"></i> My Pass
                   </button>
               </div>
-              <button class="download-invoice-btn">
+              <button class="download-invoice-btn" onclick="downloadInvoice('${order.order_id}')">
                   <i class="fa-regular fa-file-lines"></i> Invoice
               </button>
           </div>
@@ -198,4 +204,98 @@ cardData.data.forEach(order => {
   `;
 
   cardContainer.appendChild(card);
+
 });}
+
+
+
+
+function downloadInvoice(order_id){
+    event_data(order_id)
+    .then(data=>{
+        console.log(data);
+
+        make_invoice(data)
+        .then((blob) => {
+            // Create a temporary URL for the Blob
+            const blobUrl = window.URL.createObjectURL(blob);
+        
+            // Create a temporary link element to trigger the download
+            const a = document.createElement('a');
+            a.href = blobUrl;
+            a.download = `youthstring_${order_id}.pdf`; // Specify the filename for the download
+            a.style.display = 'none';
+        
+            // Append the link to the document and trigger the click event
+            document.body.appendChild(a);
+            a.click();
+        
+            // Clean up by revoking the temporary URL and removing the link
+            window.URL.revokeObjectURL(blobUrl);
+            document.body.removeChild(a);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+
+    })
+
+
+
+// const downloadButtons = document.querySelector('.download-invoice-btn')
+
+// const content = document.querySelector('.order-card');
+// const card=downloadButtons.closest('.order-card');
+// const cardContainer = document.querySelector(".order-container");
+// console.log(card);
+}
+
+
+function event_data(order_id){
+    const url = 'https://mysite-ten-psi.vercel.app/invoice_data_send/';
+    const orderJson = {"order_id":order_id}
+    const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+      'Content-Type': 'application/json',
+    },
+    
+    body:JSON.stringify(orderJson)
+    };
+    
+    return fetch(url, requestOptions)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+      return response.json();
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+  }
+
+  function make_invoice(invoiceJson){
+    const url = 'https://harshitlohia5.pythonanywhere.com/invoice_download/';
+    const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+      'Content-Type': 'application/json'
+    },
+    
+    body:JSON.stringify(invoiceJson)
+    };
+    
+    return fetch(url, requestOptions)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+      return response.blob();
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+  }

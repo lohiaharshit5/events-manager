@@ -168,26 +168,16 @@ function codeverify() {
           var responseData = JSON.parse(responseDataJSON);
         
           // Now you can use the responseData object to access the data from the previous page
-          console.log(responseData);
-          console.log('discount =', responseData.discount);
-          console.log('gender =',responseData.gender);
-          console.log('quantity=',responseData.quantity);
-          console.log('final amount =',responseData.final_amount);
-          console.log('age= ', responseData.Age);
+ 
           localStorage.setItem('discount',responseData.discount );
           localStorage.setItem('gender',responseData.gender );
           localStorage.setItem('quantity',responseData.quantity );
           localStorage.setItem('final_amount',responseData.final_amount);
           localStorage.setItem('Age',responseData.Age );
           localStorage.setItem('user_id',userID );
-          console.log('local storage done');
 
-          console.log("userId:", userID);
-          console.log("user_id from local", localStorage.getItem("user_id"));
-          console.log('age=', age);
-          console.log('mobileAPIDATA=',mobileApiData);
           const gen = localStorage.getItem('gender');
-          console.log(gen);
+
           const nextPageURL = "payment_gateway.html" +"?data="+encodeURIComponent(JSON.stringify(mobileApiData));
 
           window.location.href = nextPageURL;

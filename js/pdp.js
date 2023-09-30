@@ -1,19 +1,5 @@
 
 
-// Now you can use the `svgString` variable to embed or manipulate the SVG content as needed.
-
-
-// Now you can use the `svgString` variable to embed or manipulate the SVG content as needed.
-// const jsonDataString = passes_left();
-// const jsonData = JSON.parse(jsonDataString);
-
-// const left = passes_left()
-// console.log('ee',left);
-
-
-// console.log(localStorage.getItem("user_id"));
-
-
 passes_left()
   .then(data => {
     // Here you can use the data returned by the API response
