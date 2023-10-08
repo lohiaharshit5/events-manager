@@ -116,8 +116,8 @@ function googleAPIData(){
 
 
 
-    function pdp_nav(){
-      window.location.href = "pdp_screen.html";
+    function pdp_nav(eventID){
+      window.location.href = "pdp_screen.html" + `?event_id=${eventID}`;
       console.log("done");
     }
     // Initialize Lottie animation with cloud JSON

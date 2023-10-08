@@ -1,6 +1,102 @@
+const urlParams = new URLSearchParams(window.location.search);
+const eventId = urlParams.get('event_id');
+const eventHeader = document.querySelector('.event-header');
+const banner1 = document.getElementById('banner1');
+const banner2 = document.getElementById('banner2');
+const banner3 = document.getElementById('banner3');
+const venue = document.getElementById('venue1');
+const eventDate = document.getElementById('event_date');
+const nearestMetro = document.querySelector('.metro-text');
+const divNearestMetro = document.getElementById('nearest-metro');
+const mapLink = document.querySelector('.map-link');
+const likesNumber = document.querySelector('.likes-number');
+const benefitsBody = document.querySelector('.desc-body');
+const whatsIncluded = document.querySelector('.grey-included').querySelector('ul');
+console.log(whatsIncluded);
 
 
-passes_left()
+
+dynamic_pdp_content(eventId)
+.then(data=>{
+  console.log(data);
+
+  eventHeader.innerText = data.data.name;
+  banner1.src = data.data.banners_link[0];
+  banner2.src = data.data.banners_link[1];
+  banner3.src = data.data.banners_link[2];
+  venue.innerText = data.data.venue;
+  eventDate.innerText = data.data.event_date;
+  likesNumber.innerText = data.data.interested_users_count;
+
+  
+  const benefits = data.data.benefits;
+
+  // Filling Whats Included text
+  const whatsIncludedText = data.data.whats_included;
+  const whatsIncludedIcon = data.data.whats_included_icon;
+  const iconClassList = data.data.icon_class;
+  whatsIncluded.innerHTML="";
+
+
+  for (let y= 0;y<whatsIncludedText.length;y++){
+    console.log("in y")
+    const listElem = document.createElement('li');
+    const icon = whatsIncludedIcon[y];
+    const iconSpan = document.createElement('span');
+    const iconClass = iconClassList[y];
+    iconSpan.innerHTML = icon;
+    iconSpan.classList.add(iconClass);
+    const textSpan = document.createElement('span');
+    
+
+    const text = whatsIncludedText[y];
+    textSpan.textContent = text;
+
+    const fullLine = icon + " "+text;
+    listElem.appendChild(iconSpan);
+    listElem.appendChild(document.createTextNode('  ')); // Add space between icon and text
+    listElem.appendChild(textSpan);
+
+    whatsIncluded.appendChild(listElem);
+
+
+
+  }
+  // Filling Whats Included text over
+
+
+
+
+
+
+// filling benefits text
+  for (let i=0;i<benefits.length;i++){
+    benefits[i]+="<br>";
+  }
+  const result  = benefits.join(' ');
+  console.log(result)
+  benefitsBody.innerHTML = result;
+  // benefits text over
+
+
+  if (data.data.nearest_metro==null){
+    console.log("shshshsh")
+    divNearestMetro.style.display='none';
+    if(data.data.map_link==null){
+      mapLink.style.display='none';
+    }
+    else{
+      mapLink.href = data.data.map_link;
+    }
+  }
+  else{
+    nearestMetro.innerText = data.data.nearest_metro;
+  }
+  setTimeout(hideLoader, 0);
+
+})
+
+passes_left(eventId)
   .then(data => {
     // Here you can use the data returned by the API response
     console.log('API Response Data:', data);
@@ -122,7 +218,7 @@ function autoShowSlides() {
         }
 
         // Simulate a delay (remove this in your actual implementation)
-        setTimeout(hideLoader, 1000);
+        // setTimeout(hideLoader, 3000);
 
 
   // function loaderfunction(){
@@ -349,23 +445,6 @@ function passDataAndRedirect(){
 }
 
 
-// function passDataAndRedirect() {
-//   var response = {
-//     'discount': extractIntegersFromString(Discount.textContent),
-//     'gender': Gender.innerText,
-//     'quantity': quantity.innerText,
-//     'final_amount': extractIntegersFromString(finalAmount.textContent)
-//   };
-
-//   // Convert the response object to a JSON string
-//   var responseJSON = JSON.stringify(response);
-
-//   // Append the response as a query parameter to the URL
-//   var nextPageURL = "next_page.html" + "?data=" + encodeURIComponent(responseJSON);
-
-//   // Redirect to the next page
-//   window.location.href = nextPageURL;
-// }
 
 function extractIntegersFromString(word) {
   // Use regular expression to match all numeric characters in the word
@@ -379,15 +458,17 @@ function extractIntegersFromString(word) {
 
 // get passes left data
 
-function passes_left(){
+function passes_left(event_id){
 const url = 'https://mysite-ten-psi.vercel.app/passes_left/';
+const eventJSON = {"event_id":event_id}
 
 const requestOptions = {
-method: 'GET',
+method: 'POST',
 headers: {
   'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
   'Content-Type': 'application/json',
-}
+},
+body:JSON.stringify(eventJSON)
 };
 
 return fetch(url, requestOptions)
@@ -405,3 +486,30 @@ return fetch(url, requestOptions)
 
 // to calculate the total amount
 
+
+// eventsdata dynamic
+
+function dynamic_pdp_content(event_id){
+  const url = 'https://mysite-ten-psi.vercel.app/dynamic_pdp_content/';
+  const orderJson = {"event_id":event_id}
+  const requestOptions = {
+  method: 'POST',
+  headers: {
+    'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
+    'Content-Type': 'application/json',
+  },
+  
+  body:JSON.stringify(orderJson)
+  };
+  
+  return fetch(url, requestOptions)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok.');
+    }
+    return response.json();
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}

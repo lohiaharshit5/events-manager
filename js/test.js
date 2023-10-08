@@ -1,131 +1,44 @@
-// function invoice_download(attribute){
-//     const url = 'https://harshitlohia5.pythonanywhere.com/invoice_download/';
+document.addEventListener('DOMContentLoaded', function() {
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const downloadButton = document.getElementById('downloadButton');
+  const popupContainer = document.getElementById('popupContainer');
+  const overlay = document.getElementById('overlay');
+
+  // Add click event listener to the Download button
+  downloadButton.addEventListener('click', function() {
+    overlay.style.display = 'block';
+      // Show the popup container
+    popupContainer.style.display = 'block';
+
+      // Simulate a download process
+    simulateDownload();
+  });
+
+  function simulateDownload() {
     
-//     const requestOptions = {
-//     method: 'POST',
-//     headers: {
-//       'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
-//       'Content-Type': 'application/pdf',
-//     },
-//     body:JSON.stringify(attribute)
-//     };
-    
-//     return fetch(url, requestOptions)
-//     .then(response => {
-//       if (!response.ok) {
-//         throw new Error('Network response was not ok.');
-//       }
-//       return response.json();
-//     })
-//     .catch(error => {
-//       console.error('Error fetching data:', error);
-//     });
-//   }
-  
 
-//   const attribute = {
-//     "invoice_id" : 2323,
-//     "customer_name" : "customer_name",
-//     "date" : "date",
-//     "order_id" : "202309292115412",
-//     "customer_id" : "customer_id",
-//     "event_name" : "event_name",
-//     "amount" : "999",
-//     "quantity" : "2",
-//     "gst" : "18",
-//     "total_amount" : "1017"
-//     }
+      let progress = 0;
 
-// invoice_download(attribute)
-// .then((response) => {
-//     console.log(response);
-//     if (!response.ok) {
-//       throw new Error(`HTTP error! Status: ${response.status}`);
-//     }
-//     return response.blob(); // Convert the response to a Blob
-//   })
-//   .then((blob) => {
-//     // Create a temporary URL for the Blob
-//     const blobUrl = window.URL.createObjectURL(blob);
+      // Update the progress bar every 100 milliseconds
+      const interval = setInterval(function() {
+          // Increment the progress
+          progress += 1;
 
-//     // Create a temporary link element to trigger the download
-//     const a = document.createElement('a');
-//     a.href = blobUrl;
-//     a.download = 'your_invoice.pdf'; // Specify the filename for the download
-//     a.style.display = 'none';
+          // Update the width of the progress bar
+          progressBar.style.width = `${progress}%`;
 
-//     // Append the link to the document and trigger the click event
-//     document.body.appendChild(a);
-//     a.click();
+          // Update the text to show the percentage
+          progressText.innerText = `${progress}%`;
 
-//     // Clean up by revoking the temporary URL and removing the link
-//     window.URL.revokeObjectURL(blobUrl);
-//     document.body.removeChild(a);
-//   })
-//   .catch((error) => {
-//     console.error('Error:', error);
-//   });
-
-
-function invoice_download(attribute) {
-    const url = 'https://harshitlohia5.pythonanywhere.com/invoice_download/';
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Authorization': 'ghsJJDGEBBDC%^&C%^527272---etgdbRandom',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(attribute),
-    };
-  
-    return fetch(url, requestOptions)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok.');
-        }
-        return response.blob(); // Convert the response to a Blob
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
+          // Check if download is complete (progress reaches 100%)
+          if (progress >= 101) {
+              clearInterval(interval);
+              alert('Download complete!');
+              
+              // Hide the popup container after download completion
+              popupContainer.style.display = 'none';
+          }
+      }, 100); // Adjust the interval as needed
   }
-  
-  const attribute = {
-    "invoice_id": 2323,
-    "customer_name": "customer_name",
-    "date": "date",
-    "order_id": "202309292115412",
-    "customer_id": "customer_id",
-    "event_name": "event_name",
-    "amount": "999",
-    "quantity": "2",
-    "gst": "18",
-    "total_amount": "1017"
-  };
-  const order_id = attribute.order_id;
-  
-  function download(){
-  invoice_download(attribute)
-    .then((blob) => {
-      // Create a temporary URL for the Blob
-      const blobUrl = window.URL.createObjectURL(blob);
-  
-      // Create a temporary link element to trigger the download
-      const a = document.createElement('a');
-      a.href = blobUrl;
-      a.download = `youthstring_${order_id}.pdf`; // Specify the filename for the download
-      a.style.display = 'none';
-  
-      // Append the link to the document and trigger the click event
-      document.body.appendChild(a);
-      a.click();
-  
-      // Clean up by revoking the temporary URL and removing the link
-      window.URL.revokeObjectURL(blobUrl);
-      document.body.removeChild(a);
-      console.log("done")
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });}
-  
+});

@@ -128,6 +128,8 @@ body{
 .location-icon {
     height: 18px;
     fill: #717171;
+    padding-right:5px;
+    margin-bottom: -2px;
 }
 
 .benefits-icon{
@@ -261,15 +263,16 @@ body{
 .calendar-icon {
     height: 18px;
     fill: #717171;
-
+    margin-bottom: -2px;
     padding-right: 4px;
-    padding-bottom: 0;
+
 }
 
 .metro-icon{
     height: 22px;
     fill: #717171;
     margin-left: -2px;
+    margin-bottom: -5px;
 
 }
 
@@ -322,10 +325,11 @@ letter-spacing: 2px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.map{
+.map,.map-link{
     color: #EC5E71;
     cursor: pointer;
     margin-left: -7px;
+    text-decoration: none;
 }
 
 .event-header{

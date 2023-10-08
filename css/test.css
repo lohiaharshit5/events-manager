@@ -1,67 +1,41 @@
-/* styles.css */
-
-.get-pass-button {
-  position: relative;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  overflow: hidden;
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.button-text {
-  display: inline-block;
-  transition: opacity 0.3s ease; /* Add a smooth transition for opacity */
+.progress-container {
+  width: 300px;
+  height: 20px;
+
+  background-color: whitesmoke;
+  border-radius: 10px;
+  display: none;
+
 }
 
-.dots {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none; /* Initially hidden */
+.popup-box{
+  background: black;
+  width: 50%;
+  height: 50%;
 }
 
-.dot1 {
-  width: 10px;
-  height: 10px;
+.progress-bar {
+  height: 100%;
+  width: 0;
   background-color: #f06;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 4px;
-  animation: bounce 1s infinite;
-  animation-delay: 0s;}
-.dot2 {
-  width: 10px;
-  height: 10px;
-  background-color: #f06;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 4px;
-  animation: bounce 1s infinite;
-  animation-delay: 0.3s;
+  border-radius: 10px;
+  transition: width 1s ease; /* Adjust the duration as needed */
 }
-.dot3 {
-  width: 10px;
-  height: 10px;
-  background-color: #f06;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 4px;
-  animation: bounce 1s infinite;
-  animation-delay: 0.6s;
+ 
+
+.progress-text{
+  color: #f06;
+  display: block;
+  font-size: larger;
+  font-weight: bolder;
 }
 
-@keyframes bounce {
-  0%, 100% {
-      transform: translateY(0);
-  }
-  25% {
-      transform: translateY(-10px);
-  }
-  50% {
-      transform: translateY(0);
-  }
-}

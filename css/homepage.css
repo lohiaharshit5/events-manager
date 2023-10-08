@@ -237,6 +237,15 @@ font-size: 30px;
   /* margin-left: 2.5%;
   margin-right: 2.5%; */
 }
+.bottom1{
+  display: flex;
+  justify-content: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #7aa6ff;
+  /* margin-left: 2.5%;
+  margin-right: 2.5%; */
+}
 
 .bottom-container{
   display: flex;

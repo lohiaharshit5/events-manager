@@ -8,7 +8,7 @@ body{
   background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back3.jpg') no-repeat;
   background-size: cover;
   margin: 0;
-  height: 100%;
+  height: 100vh;
   background-position: center;
 
 }
@@ -195,6 +195,91 @@ body{
 
 
 
+
+  /* Downloading Bar  */
+  #download-button {
+    padding: 10px 20px;
+    background-color: #f06;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-container{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.download-json{
+  height: 50px;
+  width: 100px;
+
+}
+
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); 
+display: none; 
+z-index: 999; 
+}
+
+#progress-container {
+    width: 100%;
+    height: 20px;
+    z-index: 1000;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #f06;
+    transition: width 0.3s ease-in-out;
+}
+
+#progress-text {
+    text-align: center;
+}
+
+.pop-text{
+    color: grey;
+    font-size: medium;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Downloading bar end */
+
+
+
 @media only screen and (min-width:710px){
   body{
     background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back2.jpg') no-repeat;
@@ -239,3 +324,4 @@ body{
     }
   
     }
+

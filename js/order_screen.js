@@ -1,4 +1,11 @@
+let percent = 0;
+const progressBar = document.getElementById('progress-bar');
+const progressText = document.getElementById('progress-text');
+const popup = document.getElementById('popup');
+const overlay = document.getElementById('overlay');
+const downloadBarJson= document.querySelector('.download-json');
 var container = document.getElementById('loader');
+
     // function loadingfunction(){
     // container.style.display = 'none';
     //   }
@@ -72,6 +79,7 @@ fetch(apiUrl, requestOptions)
     .then(data => {
         console.log('Response data:', data);
         if (data.total_orders>=1){
+            document.body.style.height='100%'
 
         card_maker(data);
         if (data.total_orders==1){
@@ -153,7 +161,7 @@ cardData.data.forEach(order => {
   card.innerHTML = `
       <div class="product-details">
           <div class="product-image">
-              <img src="https://storage.googleapis.com/youthstring.appspot.com/img/pexels-andres-ayrton-6578960.jpg" alt="Product" />
+              <img src="${order.img_url}" alt="Product" />
           </div>
           <div class="product-name">
               <span>${order.event_name}</span>
@@ -192,7 +200,7 @@ cardData.data.forEach(order => {
           </div>
           <div class="order-actions">
               <div class="pass-btn">
-                  <button class="pass-dnld">
+                  <button class="pass-dnld" onclick="openPopup()">
                       <i class="fa-solid fa-ticket"></i> My Pass
                   </button>
               </div>
@@ -210,13 +218,29 @@ cardData.data.forEach(order => {
 
 
 
+
 function downloadInvoice(order_id){
+    popup.style.display="block"
+
+    var animationOptionssss = {
+        container: downloadBarJson,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'img/lotties/download1.json'
+    };
+    var downloadJson = lottie.loadAnimation(animationOptionssss);
+    overlay.style.display='block';
+
+
+
     event_data(order_id)
     .then(data=>{
         console.log(data);
 
         make_invoice(data)
         .then((blob) => {
+            console.log(blob.size)
             // Create a temporary URL for the Blob
             const blobUrl = window.URL.createObjectURL(blob);
         
@@ -233,6 +257,15 @@ function downloadInvoice(order_id){
             // Clean up by revoking the temporary URL and removing the link
             window.URL.revokeObjectURL(blobUrl);
             document.body.removeChild(a);
+            
+
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                popup.style.display = 'none';
+                percent = 0; // Reset the progress for the next download
+            }, 500)
+            popup.style.display='none';
+            downloadBarJson.firstChild.remove();
           })
           .catch((error) => {
             console.error('Error:', error);
@@ -299,3 +332,11 @@ function event_data(order_id){
       console.error('Error fetching data:', error);
     });
   }
+
+
+// Download invoice bar started
+
+
+
+
+  // Download invoice bar ended
