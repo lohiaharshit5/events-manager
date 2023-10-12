@@ -12,6 +12,15 @@ const mapLink = document.querySelector('.map-link');
 const likesNumber = document.querySelector('.likes-number');
 const benefitsBody = document.querySelector('.desc-body');
 const whatsIncluded = document.querySelector('.grey-included').querySelector('ul');
+let mainAddtoCart= document.getElementById('add-passes btn');
+let minusButton = document.getElementById('minus-btn');
+let plusButton = document.getElementById('plus-btn');
+let mainAge= document.getElementById('age-selection');
+let minusButtonAge = document.getElementById('minus-btn-age');
+let plusButtonAge = document.getElementById('plus-btn-age');
+var finalAmount = document.querySelector('.final-amount');
+var cuttedAmount = document.querySelector('.cutted-amount');
+var discountAmount = document.querySelector('.dynamic-amount');
 console.log(whatsIncluded);
 
 
@@ -28,7 +37,7 @@ dynamic_pdp_content(eventId)
   eventDate.innerText = data.data.event_date;
   likesNumber.innerText = data.data.interested_users_count;
 
-  
+  // finalAmount.innerText = 'Rs'+data.data.final_amount;
   const benefits = data.data.benefits;
 
   // Filling Whats Included text
@@ -36,8 +45,12 @@ dynamic_pdp_content(eventId)
   const whatsIncludedIcon = data.data.whats_included_icon;
   const iconClassList = data.data.icon_class;
   whatsIncluded.innerHTML="";
+  finalAmount.innerText='Rs'+data.data.final_amount;
+  discountAmount.innerText = 'Rs '+data.data.discount_amount;
+  cuttedAmount.innerText = 'Rs'+data.data.cross_amount;
 
 
+// Whats included backend changes
   for (let y= 0;y<whatsIncludedText.length;y++){
     console.log("in y")
     const listElem = document.createElement('li');
@@ -58,7 +71,6 @@ dynamic_pdp_content(eventId)
     listElem.appendChild(textSpan);
 
     whatsIncluded.appendChild(listElem);
-
 
 
   }
@@ -92,7 +104,7 @@ dynamic_pdp_content(eventId)
   else{
     nearestMetro.innerText = data.data.nearest_metro;
   }
-  setTimeout(hideLoader, 0);
+  setTimeout(hideLoader, 1000);
 
 })
 
@@ -232,15 +244,7 @@ function autoShowSlides() {
 
 
 
-let mainAddtoCart= document.getElementById('add-passes btn');
-let minusButton = document.getElementById('minus-btn');
-let plusButton = document.getElementById('plus-btn');
-let mainAge= document.getElementById('age-selection');
-let minusButtonAge = document.getElementById('minus-btn-age');
-let plusButtonAge = document.getElementById('plus-btn-age');
-var finalAmount = document.querySelector('.final-amount');
-var cuttedAmount = document.querySelector('.cutted-amount');
-var discountAmount = document.querySelector('.dynamic-amount');
+
 
 
 
@@ -272,6 +276,7 @@ plusButton.addEventListener("click", ()=>{
   }
   else {
     console.log("more than 1");
+
   }
 
 })
@@ -287,6 +292,7 @@ minusButton.addEventListener("click", ()=>{
   var discount_amount = 50+Math.ceil((mainAddtoCart.innerText)*999*5/100);
   discountAmount.innerText=`Rs 50`;
   finalAmount.innerText = '  Rs999';
+  console.log("less than 2")
   cuttedAmount.innerText = 'Rs1049 ';
 
   
@@ -307,6 +313,10 @@ minusButton.addEventListener("click", ()=>{
   }
   else {
     console.log("more than 1");
+    discountAmount.innerText=`Rs 50`;
+    finalAmount.innerText = '  Rs999';
+    console.log("less than 2")
+    cuttedAmount.innerText = 'Rs1049 ';
   }
 }})
 
