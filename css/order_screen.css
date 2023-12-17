@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
+
+body{
+  background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back3.jpg') no-repeat;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  background-position: center;
+
+}
+
+.order-icon{
+  height: 40px;
+
+}
+
+.order-icon-cont{
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+.order-card:first-child {
+  background-color: #000000a5;
+  color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-family: 'Poppins', sans-serif ;
+  margin-top: 80px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  
+}
+
+.order-card:not(:first-child) {
+  background-color: #000000a5;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif ;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.order-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-arrow {
+  color: #333;
+  font-size: 24px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.order-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.order-content {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-family:'Poppins', sans-serif 
+}
+
+.order-details span {
+  font-size: 14px;
+  color: white;
+}
+
+.order-details span:first-child {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.order-actions {
+  display: flex;
+  justify-content:space-between;
+}
+
+.pass-dnld {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.download-invoice-btn{
+  background: none;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.product-details {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+  font-family: 'Mukta', sans-serif;
+}
+
+.product-image img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.product-name span {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+/* Additional styles to make it look prettier, feel free to modify or enhance */
+.order-container {
+  /* background-image: linear-gradient(to bottom right, #f44336, #ff8f00); */
+}
+
+.top-container{
+  top:0;
+  background: #000000;
+  position: fixed;
+  width: 100%;
+  padding: 0;
+
+}
+
+.top-navigation {
+  color: white;
+  display: flex;
+  /* margin-top: -8px; */
+  align-items: center;
+  padding: 8px 10px;
+}
+
+.back-arrow {
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+  margin-right: 8px;
+}
+
+.page-title {
+  font-size: 18px;
+  margin: 0;
+  font-family:'Mukta', sans-serif;
+  padding: 10px 2px;
+}
+
+
+#loader{
+    position: fixed;
+    width:110%;
+    top: 0;
+    left:0;
+    height: 100vh;
+    background:white;
+    z-index: 2;
+  }
+
+
+
+
+  /* Downloading Bar  */
+  #download-button {
+    padding: 10px 20px;
+    background-color: #f06;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-container{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.download-json{
+  height: 50px;
+  width: 100px;
+
+}
+
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); 
+display: none; 
+z-index: 999; 
+}
+
+#progress-container {
+    width: 100%;
+    height: 20px;
+    z-index: 1000;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #f06;
+    transition: width 0.3s ease-in-out;
+}
+
+#progress-text {
+    text-align: center;
+}
+
+.pop-text{
+    color: grey;
+    font-size: medium;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Downloading bar end */
+
+
+
+@media only screen and (min-width:710px){
+  body{
+    background: url('https://storage.googleapis.com/youthstring.appspot.com/img/order_back2.jpg') no-repeat;
+    background-size: cover;}
+
+    .order-card:first-child {
+      background-color: #000000a5;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-top: 80px;
+      font-family: 'Poppins', sans-serif ;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    
+    }
+    .pass-dnld{
+      /* font-weight: bold; */
+      color: white;
+
+      background: #f44336;
+      font-family:'Poppins', sans-serif 
+      /* border: 1px solid white; */
+    }
+
+    .download-invoice-btn{
+      color: white;
+      background: none;
+      border: 1px solid white;
+
+    }
+    .download-invoice-btn:hover{
+      color: red;
+      background: white;
+
+
+    }
+    .top-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    }
+

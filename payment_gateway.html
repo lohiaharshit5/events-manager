@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment gatepay</title>
+</head>
+
+<style>
+.container{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+.accept-btn{
+    background: none;
+    border: none;
+    color: white;
+    background-color: rgb(17, 140, 19);
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+.reject-btn{
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(215, 36, 36);
+    padding: 10px 10px;
+    border-radius: 5px;
+    
+}
+.header{
+
+    text-align: center;
+}
+
+
+</style>
+<body>
+<div class="header">
+    <h1>PAYMENT GATEWAY SPACE</h1>
+</div>
+<div class="container">
+    <div class="accept"><button class="accept-btn" onclick="order_creation()">Accept Payment</button></div>
+    <div class="reject"><button class="reject-btn" onclick="user_id()">Reject Payment</button></div>
+
+</div>  
+
+<script src="js/payment_gateway.js"></script>
+</body>
+</html>

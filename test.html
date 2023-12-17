@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #download-button {
+            padding: 10px 20px;
+            background-color: #f06;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            padding-top: 50px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        display: none; /* Initially hidden */
+        z-index: 999; /* Ensure the overlay is on top of other elements */
+}
+
+        #progress-container {
+            width: 100%;
+            height: 20px;
+            z-index: 1000;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        #progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #f06;
+            transition: width 0.3s ease-in-out;
+        }
+
+        #progress-text {
+            text-align: center;
+        }
+
+        .pop-text{
+            color: grey;
+            font-size: medium;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay"></div>
+
+    <button id="download-button" onclick="openPopup()">Download</button>
+
+    <div id="popup"> 
+        <div class="pop-text">Please wait your invoice is downloading</div>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="progress-text">0%</div>
+    </div>
+    
+
+    <script>
+        let percent = 0;
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+
+        function updateProgress() {
+            if (percent <= 100) {
+                overlay.style.display = 'block';
+                progressBar.style.width = percent + '%';
+                progressText.textContent = percent + '%';
+                percent += 1;
+                setTimeout(updateProgress, 50);
+            } else {
+                // Close the popup when the download is complete
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    popup.style.display = 'none';
+                    percent = 0; // Reset the progress for the next download
+                }, 500);
+            }
+        }
+
+        function openPopup() {
+            popup.style.display = 'block';
+            updateProgress();
+        }
+
+        function function1() {
+    console.log('Function 1 started');
+    console.log('Function 1 completed');
+
+}
+
+function function2() {
+    console.log('Function 2 started');
+    console.log('Function 2 completed');
+
+}
+
+function1();
+function2();
+
+    </script>
+
+</body>
+
+</html>
+
